@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>墨凡说</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://hexo.freelion.me/"/>
+  <updated>2016-10-21T09:10:17.000Z</updated>
+  <id>http://hexo.freelion.me/</id>
+  
+  <author>
+    <name>墨凡</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阅读技术文档，也是一种能力</title>
+    <link href="http://hexo.freelion.me/2016/freelion/"/>
+    <id>http://hexo.freelion.me/2016/freelion/</id>
+    <published>2016-10-21T05:52:42.000Z</published>
+    <updated>2016-10-21T09:10:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>培养阅读文档的能力，对于程序猿的提升，很重要。</p>
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;培养阅读文档的能力，对于程序猿的提升，很重要。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="文档" scheme="http://hexo.freelion.me/tags/%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+</feed>
