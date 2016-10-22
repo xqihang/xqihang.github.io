@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="文档," />
+  <meta name="keywords" content="附件上传,php," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="培养阅读文档的能力，对于程序猿的提升，很重要。">
+<meta name="description" content="前段时间做了一个类似附件上传的功能，前端请求正常，可后端[php]就是接受不到大文件（大于20M），于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阅读技术文档，也是一种能力">
-<meta property="og:url" content="http://xqihang.github.io/2016/freelion/index.html">
+<meta property="og:title" content="附件上传超大文件，后端接受不到原因及解决办法集锦">
+<meta property="og:url" content="http://xqihang.github.io/2016/php-upload-file/index.html">
 <meta property="og:site_name" content="墨凡说">
-<meta property="og:description" content="培养阅读文档的能力，对于程序猿的提升，很重要。">
-<meta property="og:updated_time" content="2016-10-21T11:44:30.000Z">
+<meta property="og:description" content="前段时间做了一个类似附件上传的功能，前端请求正常，可后端[php]就是接受不到大文件（大于20M），于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！">
+<meta property="og:updated_time" content="2016-10-22T12:18:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阅读技术文档，也是一种能力">
-<meta name="twitter:description" content="培养阅读文档的能力，对于程序猿的提升，很重要。">
+<meta name="twitter:title" content="附件上传超大文件，后端接受不到原因及解决办法集锦">
+<meta name="twitter:description" content="前段时间做了一个类似附件上传的功能，前端请求正常，可后端[php]就是接受不到大文件（大于20M），于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://xqihang.github.io/2016/freelion/"/>
+  <link rel="canonical" href="http://xqihang.github.io/2016/php-upload-file/"/>
 
 
-  <title> 阅读技术文档，也是一种能力 | 墨凡说 </title>
+  <title> 附件上传超大文件，后端接受不到原因及解决办法集锦 | 墨凡说 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +251,7 @@
             
             
               
-                阅读技术文档，也是一种能力
+                附件上传超大文件，后端接受不到原因及解决办法集锦
               
             
           </h1>
@@ -263,8 +263,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-21T13:52:42+08:00" content="2016-10-21">
-              2016-10-21
+            <time itemprop="dateCreated" datetime="2016-10-22T19:23:00+08:00" content="2016-10-22">
+              2016-10-22
             </time>
           </span>
 
@@ -274,8 +274,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/freelion/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/freelion/" itemprop="commentsCount"></span>
+                <a href="/2016/php-upload-file/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/php-upload-file/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -285,7 +285,7 @@
 
           
           
-             <span id="/2016/freelion/" class="leancloud_visitors" data-flag-title="阅读技术文档，也是一种能力">
+             <span id="/2016/php-upload-file/" class="leancloud_visitors" data-flag-title="附件上传超大文件，后端接受不到原因及解决办法集锦">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -307,16 +307,19 @@
       
 
       
-        <p>培养阅读文档的能力，对于程序猿的提升，很重要。</p>
-<a id="more"></a>
-<p>一个优秀的程序员，必备的一个素养，就是能够<strong>高效率的阅读技术类文档</strong>( 下面简称文档 )，快速的从各种文档中，寻找到自己需要的内容并投入使用到当前工作中</p>
-<p>以我为例，对比了一下2015年前后对于技术的认识，惊奇的发现，就是在一次认认真真读技术文档，这就像是武林中人常说的：</p>
-<blockquote>
-<p><strong>打通了任督二脉，气聚丹田，发现气海涌动，达到天人合一的境界</strong></p>
+        <blockquote>
+<p>前段时间做了一个类似<strong>附件上传</strong>的功能，前端请求正常，可后端[php]就是接受不到大文件<strong>（大于20M）</strong>，于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！</p>
 </blockquote>
-<p>说的可能夸张了些，不过高效率的阅读技术文档，确确实实的能在一定程度上提升在技术领域的视野、修养。</p>
-<p>作为程序员，英语阅读能力是最基本的要求，相对口语和写作来说也是最容易达到的，因为计算机类图书的那些常用单词就那么多，多读几本英语类技术图书，想不认识都难。</p>
-<p>如果程序员缺乏英语阅读能力，这将是你非常大的一块短板，如果意识到了，尽早补上。</p>
+<a id="more"></a>
+<hr>
+<h3 id="下面分别是各种原因以及解决办法："><a href="#下面分别是各种原因以及解决办法：" class="headerlink" title="下面分别是各种原因以及解决办法："></a>下面分别是各种原因以及解决办法：</h3><h4 id="第1种情况：upload-tmp-dir"><a href="#第1种情况：upload-tmp-dir" class="headerlink" title="第1种情况：upload_tmp_dir"></a>第1种情况：upload_tmp_dir</h4><p>文件上传时存放文件的临时目录必须是开启的并且是 PHP 进程所有者用户可写的目录。如果未指定则 PHP 使用系统默认值。php.ini文件中upload_tmp_dir用来说明PHP上传的文件放置的临时目录，要想上传文件，得保证服务器没有关闭临时文件并对该文件夹有写入的权限。</p>
+<h4 id="第2种情况：max-execution-time"><a href="#第2种情况：max-execution-time" class="headerlink" title="第2种情况：max_execution_time"></a>第2种情况：max_execution_time</h4><p><strong>max_execution_time</strong> 的值必须足够大。变量 <strong>max_execution_time</strong> 设置了在强制终止脚本前PHP等待脚本执行完毕的时间，此时间以秒计算。当脚本进入了一个无限循环状态时此变量非常有用。然而，当存在一个需要很长时间完成的合法活动时（例如上传大型文件），这项功能也会导致操作失败。在这样的情况下必须考虑将此变量值增大，以避免PHP在脚本正在执行某些重要过程的时候将脚本关闭，例如设置为 90 秒。<strong>max_execution_time = 90</strong> 注意在php函数中还有个<strong>set_time_limit</strong> 函数，和以上这个设置的作用是相同的，这两者的区别就是 以上是在 <strong>php.ini</strong> 文件中设置的，而<strong>set_time_limit</strong> 是写在php文件中的。所以也可以通过在页面中用 <strong>set_time_limit</strong> 设置程序的最长执行时间，比如无限制即：<strong>set_time_limit(0);</strong></p>
+<h4 id="第3种情况：file-uploads-On"><a href="#第3种情况：file-uploads-On" class="headerlink" title="第3种情况：file_uploads = On"></a>第3种情况：<strong>file_uploads = On</strong></h4><p>默认值为on，意思是允许通过 HTTP 进行文件上传，此选项不能设置为OFF。</p>
+<h4 id="第4种情况：upload-max-filesize-2M"><a href="#第4种情况：upload-max-filesize-2M" class="headerlink" title="第4种情况：upload_max_filesize = 2M"></a>第4种情况：<strong>upload_max_filesize = 2M</strong></h4><p>设定文件上传的大小的最大值，<strong>php.ini</strong>配置文件中的默认文件上传大小为<strong>2M</strong>，php初学者容易犯的一个错误是在编写文件上传功能时通过设置上传文件最大大小的表单区域，即允许上传文件的最大值，<strong>max_file_size</strong>（隐藏值域）的值来规定上传文件的大小，其实一般别人可以绕过这个值，所以安全起见，最好是在 php.ini 配置文件中配置 upload_max_filesize 选项，设定文件上传的大小。默认 upload_max_filesize = 2M，即文件上传的大小为2M，如果你想上传超过8M的文件，比如20M，你必须设定 <strong>upload_max_filesize = 20M</strong>。</p>
+<h4 id="第5种情况：post-max-size"><a href="#第5种情况：post-max-size" class="headerlink" title="第5种情况：post_max_size"></a>第5种情况：<strong>post_max_size</strong></h4><p>这个值也必须足够大。这个变量也是一个同表单提交相关的变量，它限制的是客户端通过POST方法进行一次表单提交时PHP程序所能够接收的最大数据量。一般情况下，将此值的值设置的比 <strong>upload_max_filesize</strong> 略大即可，比如要上传20MB的文件，此值可以设置为 21MB。</p>
+<h4 id="第6种情况：max-input-time"><a href="#第6种情况：max-input-time" class="headerlink" title="第6种情况：max_input_time"></a>第6种情况：<strong>max_input_time</strong></h4><p>此变量可以以秒为单位对通过POST、GET以及PUT方式接收数据时间进行限制。如果应用程序所运行环境处在网络比较慢的情况下，则需要增加此值以增大接收数据所需要的时间，比如将此值设置为 90秒, <strong>max_input_time = 90</strong>。</p>
+<h4 id="第7种情况：memory-limit"><a href="#第7种情况：memory-limit" class="headerlink" title="第7种情况：memory_limit"></a>第7种情况：<strong>memory_limit</strong></h4><p>这个值也必须足够大，为了避免正在运行的脚本大量使用系统可用内存，PHP允许定义内存使用限额。通过memory_limit变量来指定单个脚本程序可以使用的最大内存容量。<strong>变量memory_limit的值应当适当大于post_max_size的值</strong>。</p>
+<h4 id="第8种情况：client-max-body-size"><a href="#第8种情况：client-max-body-size" class="headerlink" title="第8种情况：client_max_body_size"></a>第8种情况：client_max_body_size</h4><p>另外如果你的主机是 <strong>nginx</strong> 操作系统的话，如果以上操作都不行的话，记得在nginx 的配置文件里面加上 <strong>client_max_body_size 20m;</strong> 这样一句，即表示最大允许上传<strong>20MB</strong>，具体根据自己的情况来。我的nginx 配置文件的位置在 /usr/local/nginx/conf/nginx.conf。</p>
 
       
     </div>
@@ -360,7 +363,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/文档/" rel="tag">#文档</a>
+            <a href="/tags/附件上传/" rel="tag">#附件上传</a>
+          
+            <a href="/tags/php/" rel="tag">#php</a>
           
         </div>
       
@@ -369,13 +374,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/freelion/" rel="next" title="阅读技术文档，也是一种能力">
+                <i class="fa fa-chevron-left"></i> 阅读技术文档，也是一种能力
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/php-upload-file/" rel="prev" title="附件上传超大文件，后端接受不到原因及解决办法集锦">
-                附件上传超大文件，后端接受不到原因及解决办法集锦 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -390,10 +395,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/freelion/"
-     data-title="阅读技术文档，也是一种能力"
+        <div class="ds-share flat" data-thread-key="2016/php-upload-file/"
+     data-title="附件上传超大文件，后端接受不到原因及解决办法集锦"
      data-content=""
-     data-url="http://xqihang.github.io/2016/freelion/">
+     data-url="http://xqihang.github.io/2016/php-upload-file/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -420,8 +425,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/freelion/"
-           data-title="阅读技术文档，也是一种能力" data-url="http://xqihang.github.io/2016/freelion/">
+      <div class="ds-thread" data-thread-key="2016/php-upload-file/"
+           data-title="附件上传超大文件，后端接受不到原因及解决办法集锦" data-url="http://xqihang.github.io/2016/php-upload-file/">
       </div>
     
   </div>
@@ -550,7 +555,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下面分别是各种原因以及解决办法："><span class="nav-number">1.</span> <span class="nav-text">下面分别是各种原因以及解决办法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第1种情况：upload-tmp-dir"><span class="nav-number">1.1.</span> <span class="nav-text">第1种情况：upload_tmp_dir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第2种情况：max-execution-time"><span class="nav-number">1.2.</span> <span class="nav-text">第2种情况：max_execution_time</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第3种情况：file-uploads-On"><span class="nav-number">1.3.</span> <span class="nav-text">第3种情况：file_uploads = On</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第4种情况：upload-max-filesize-2M"><span class="nav-number">1.4.</span> <span class="nav-text">第4种情况：upload_max_filesize = 2M</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第5种情况：post-max-size"><span class="nav-number">1.5.</span> <span class="nav-text">第5种情况：post_max_size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第6种情况：max-input-time"><span class="nav-number">1.6.</span> <span class="nav-text">第6种情况：max_input_time</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第7种情况：memory-limit"><span class="nav-number">1.7.</span> <span class="nav-text">第7种情况：memory_limit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第8种情况：client-max-body-size"><span class="nav-number">1.8.</span> <span class="nav-text">第8种情况：client_max_body_size</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

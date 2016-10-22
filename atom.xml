@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://hexo.freelion.me/"/>
-  <updated>2016-10-21T11:44:30.000Z</updated>
-  <id>http://hexo.freelion.me/</id>
+  <link href="http://xqihang.github.io/"/>
+  <updated>2016-10-22T12:18:42.000Z</updated>
+  <id>http://xqihang.github.io/</id>
   
   <author>
     <name>墨凡</name>
@@ -16,9 +16,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>附件上传超大文件，后端接受不到原因及解决办法集锦</title>
+    <link href="http://xqihang.github.io/2016/php-upload-file/"/>
+    <id>http://xqihang.github.io/2016/php-upload-file/</id>
+    <published>2016-10-22T11:23:00.000Z</published>
+    <updated>2016-10-22T12:18:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>前段时间做了一个类似<strong>附件上传</strong>的功能，前端请求正常，可后端[php]就是接受不到大文件<strong>（大于20M）</strong>，于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h3 id="下面分别是各种原因以及解决办法："><a href="#下面分别是各种原因以及解决办法：" class="headerlink" title="下面分别是各种原因以及解决办法："></a>下面分别是各种原因以及解决办法：</h3><h4 id="第1种情况：upload-tmp-dir"><a href="#第1种情况：upload-tmp-dir" class="headerlink" title="第1种情况：upload_tmp_dir"></a>第1种情况：upload_tmp_dir</h4><p>文件上传时存放文件的临时目录必须是开启的并且是 PHP 进程所有者用户可写的目录。如果未指定则 PHP 使用系统默认值。php.ini文件中upload_tmp_dir用来说明PHP上传的文件放置的临时目录，要想上传文件，得保证服务器没有关闭临时文件并对该文件夹有写入的权限。</p>
+<h4 id="第2种情况：max-execution-time"><a href="#第2种情况：max-execution-time" class="headerlink" title="第2种情况：max_execution_time"></a>第2种情况：max_execution_time</h4><p><strong>max_execution_time</strong> 的值必须足够大。变量 <strong>max_execution_time</strong> 设置了在强制终止脚本前PHP等待脚本执行完毕的时间，此时间以秒计算。当脚本进入了一个无限循环状态时此变量非常有用。然而，当存在一个需要很长时间完成的合法活动时（例如上传大型文件），这项功能也会导致操作失败。在这样的情况下必须考虑将此变量值增大，以避免PHP在脚本正在执行某些重要过程的时候将脚本关闭，例如设置为 90 秒。<strong>max_execution_time = 90</strong> 注意在php函数中还有个<strong>set_time_limit</strong> 函数，和以上这个设置的作用是相同的，这两者的区别就是 以上是在 <strong>php.ini</strong> 文件中设置的，而<strong>set_time_limit</strong> 是写在php文件中的。所以也可以通过在页面中用 <strong>set_time_limit</strong> 设置程序的最长执行时间，比如无限制即：<strong>set_time_limit(0);</strong></p>
+<h4 id="第3种情况：file-uploads-On"><a href="#第3种情况：file-uploads-On" class="headerlink" title="第3种情况：file_uploads = On"></a>第3种情况：<strong>file_uploads = On</strong></h4><p>默认值为on，意思是允许通过 HTTP 进行文件上传，此选项不能设置为OFF。</p>
+<h4 id="第4种情况：upload-max-filesize-2M"><a href="#第4种情况：upload-max-filesize-2M" class="headerlink" title="第4种情况：upload_max_filesize = 2M"></a>第4种情况：<strong>upload_max_filesize = 2M</strong></h4><p>设定文件上传的大小的最大值，<strong>php.ini</strong>配置文件中的默认文件上传大小为<strong>2M</strong>，php初学者容易犯的一个错误是在编写文件上传功能时通过设置上传文件最大大小的表单区域，即允许上传文件的最大值，<strong>max_file_size</strong>（隐藏值域）的值来规定上传文件的大小，其实一般别人可以绕过这个值，所以安全起见，最好是在 php.ini 配置文件中配置 upload_max_filesize 选项，设定文件上传的大小。默认 upload_max_filesize = 2M，即文件上传的大小为2M，如果你想上传超过8M的文件，比如20M，你必须设定 <strong>upload_max_filesize = 20M</strong>。</p>
+<h4 id="第5种情况：post-max-size"><a href="#第5种情况：post-max-size" class="headerlink" title="第5种情况：post_max_size"></a>第5种情况：<strong>post_max_size</strong></h4><p>这个值也必须足够大。这个变量也是一个同表单提交相关的变量，它限制的是客户端通过POST方法进行一次表单提交时PHP程序所能够接收的最大数据量。一般情况下，将此值的值设置的比 <strong>upload_max_filesize</strong> 略大即可，比如要上传20MB的文件，此值可以设置为 21MB。</p>
+<h4 id="第6种情况：max-input-time"><a href="#第6种情况：max-input-time" class="headerlink" title="第6种情况：max_input_time"></a>第6种情况：<strong>max_input_time</strong></h4><p>此变量可以以秒为单位对通过POST、GET以及PUT方式接收数据时间进行限制。如果应用程序所运行环境处在网络比较慢的情况下，则需要增加此值以增大接收数据所需要的时间，比如将此值设置为 90秒, <strong>max_input_time = 90</strong>。</p>
+<h4 id="第7种情况：memory-limit"><a href="#第7种情况：memory-limit" class="headerlink" title="第7种情况：memory_limit"></a>第7种情况：<strong>memory_limit</strong></h4><p>这个值也必须足够大，为了避免正在运行的脚本大量使用系统可用内存，PHP允许定义内存使用限额。通过memory_limit变量来指定单个脚本程序可以使用的最大内存容量。<strong>变量memory_limit的值应当适当大于post_max_size的值</strong>。</p>
+<h4 id="第8种情况：client-max-body-size"><a href="#第8种情况：client-max-body-size" class="headerlink" title="第8种情况：client_max_body_size"></a>第8种情况：client_max_body_size</h4><p>另外如果你的主机是 <strong>nginx</strong> 操作系统的话，如果以上操作都不行的话，记得在nginx 的配置文件里面加上 <strong>client_max_body_size 20m;</strong> 这样一句，即表示最大允许上传<strong>20MB</strong>，具体根据自己的情况来。我的nginx 配置文件的位置在 /usr/local/nginx/conf/nginx.conf。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;前段时间做了一个类似&lt;strong&gt;附件上传&lt;/strong&gt;的功能，前端请求正常，可后端[php]就是接受不到大文件&lt;strong&gt;（大于20M）&lt;/strong&gt;，于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="附件上传" scheme="http://xqihang.github.io/tags/%E9%99%84%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
+    
+      <category term="php" scheme="http://xqihang.github.io/tags/php/"/>
+    
+  </entry>
+  
+  <entry>
     <title>阅读技术文档，也是一种能力</title>
-    <link href="http://hexo.freelion.me/2016/freelion/"/>
-    <id>http://hexo.freelion.me/2016/freelion/</id>
+    <link href="http://xqihang.github.io/2016/freelion/"/>
+    <id>http://xqihang.github.io/2016/freelion/</id>
     <published>2016-10-21T05:52:42.000Z</published>
     <updated>2016-10-21T11:44:30.000Z</updated>
     
@@ -41,7 +78,7 @@
     </summary>
     
     
-      <category term="文档" scheme="http://hexo.freelion.me/tags/%E6%96%87%E6%A1%A3/"/>
+      <category term="文档" scheme="http://xqihang.github.io/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   
