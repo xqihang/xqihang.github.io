@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,centos,php," />
 
 
 
@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="一段文字、一段音频，让网络将你我连接！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="墨凡说">
-<meta property="og:url" content="http://xqihang.github.io/archives/2016/index.html">
+<meta name="description" content="Centos6中使用yum进行安装PHP，往往是较低的版本，这篇文字教你如何替换旧的PHP为PHP7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="教你在Centos6中如何安装最新的PHP7">
+<meta property="og:url" content="http://xqihang.github.io/2017/centos-install-php7/index.html">
 <meta property="og:site_name" content="墨凡说">
-<meta property="og:description" content="一段文字、一段音频，让网络将你我连接！">
+<meta property="og:description" content="Centos6中使用yum进行安装PHP，往往是较低的版本，这篇文字教你如何替换旧的PHP为PHP7">
+<meta property="og:updated_time" content="2017-02-15T09:50:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="墨凡说">
-<meta name="twitter:description" content="一段文字、一段音频，让网络将你我连接！">
+<meta name="twitter:title" content="教你在Centos6中如何安装最新的PHP7">
+<meta name="twitter:description" content="Centos6中使用yum进行安装PHP，往往是较低的版本，这篇文字教你如何替换旧的PHP为PHP7">
 
 
 
@@ -115,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://xqihang.github.io/archives/2016/"/>
+  <link rel="canonical" href="http://xqihang.github.io/2017/centos-install-php7/"/>
 
 
-  <title> 归档 | 墨凡说 </title>
+  <title> 教你在Centos6中如何安装最新的PHP7 | 墨凡说 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -149,7 +150,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -237,103 +238,190 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 7 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                教你在Centos6中如何安装最新的PHP7
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-15T17:44:50+08:00" content="2017-02-15">
+              2017-02-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/centos-install-php7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/centos-install-php7/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/centos-install-php7/" class="leancloud_visitors" data-flag-title="教你在Centos6中如何安装最新的PHP7">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p>Centos6中使用yum进行安装PHP，往往是较低的版本，这篇文字教你如何替换旧的PHP为PHP7<br><a id="more"></a></p>
+<h2 id="更新软件源"><a href="#更新软件源" class="headerlink" title="更新软件源"></a>更新软件源</h2><p>wget <a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm" target="_blank" rel="external">https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm</a><br>wget <a href="http://rpms.remirepo.net/enterprise/remi-release-6.rpm" target="_blank" rel="external">http://rpms.remirepo.net/enterprise/remi-release-6.rpm</a><br>rpm -Uvh remi-release-6.rpm epel-release-latest-6.noarch.rpm</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>yum install php70-php php70-php-pear php70-php-bcmath php70-php-pecl-jsond-devel php70-php-mysqlnd php70-php-gd php70-php-common php70-php-fpm php70-php-intl php70-php-cli php70-php php70-php-xml php70-php-opcache php70-php-pecl-apcu php70-php-pecl-jsond php70-php-pdo php70-php-gmp php70-php-process php70-php-pecl-imagick php70-php-devel php70-php-mbstring php70-php-mcrypt</p>
+<h3 id="为php和php-fpm制作符号链接"><a href="#为php和php-fpm制作符号链接" class="headerlink" title="为php和php-fpm制作符号链接"></a>为php和php-fpm制作符号链接</h3><p>cp /usr/bin/php{,.bak}<br>ln -s /usr/bin/php70 /usr/bin/php<br>cp /usr/sbin/php-fpm{,.bak}<br>ln -s /opt/remi/php70/root/usr/sbin/php-fpm /usr/sbin/php-fpm</p>
+<h2 id="检查PHP和php-fpm版本并启动php-fpm"><a href="#检查PHP和php-fpm版本并启动php-fpm" class="headerlink" title="检查PHP和php-fpm版本并启动php-fpm"></a>检查PHP和php-fpm版本并启动php-fpm</h2><p>php -v<br>php-fpm -v<br>service php-fpm restart</p>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wx_pay.jpg" alt="墨凡 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/ali_pay.jpg" alt="墨凡 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/centos/" rel="tag">#centos</a>
+          
+            <a href="/tags/php/" rel="tag">#php</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/php-upload-file/" itemprop="url">
-              
-                <span itemprop="name">附件上传超大文件，后端接受不到原因及解决办法集锦</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/php-upload-file/" rel="next" title="附件上传超大文件，后端接受不到原因及解决办法集锦">
+                <i class="fa fa-chevron-left"></i> 附件上传超大文件，后端接受不到原因及解决办法集锦
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-22T19:23:00+08:00"
-              content="2016-10-22" >
-          10-22
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/nginx-proxy-nodejs/" rel="prev" title="使用nginx代理Node服务">
+                使用nginx代理Node服务 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2017/centos-install-php7/"
+     data-title="教你在Centos6中如何安装最新的PHP7"
+     data-content=""
+     data-url="http://xqihang.github.io/2017/centos-install-php7/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/read-document/" itemprop="url">
-              
-                <span itemprop="name">阅读技术文档，也是一种能力</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-21T13:52:42+08:00"
-              content="2016-10-21" >
-          10-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-
+    </div>
+  </div>
 
 
           </div>
@@ -341,6 +429,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/centos-install-php7/"
+           data-title="教你在Centos6中如何安装最新的PHP7" data-url="http://xqihang.github.io/2017/centos-install-php7/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -360,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -449,6 +554,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新软件源"><span class="nav-number">1.</span> <span class="nav-text">更新软件源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为php和php-fpm制作符号链接"><span class="nav-number">2.1.</span> <span class="nav-text">为php和php-fpm制作符号链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查PHP和php-fpm版本并启动php-fpm"><span class="nav-number">3.</span> <span class="nav-text">检查PHP和php-fpm版本并启动php-fpm</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -545,11 +661,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
 
 
   

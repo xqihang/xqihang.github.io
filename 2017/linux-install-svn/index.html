@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="文档," />
+  <meta name="keywords" content="linux,centos,svn," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="培养阅读文档的能力，对于程序猿的提升，很重要。">
+<meta name="description" content="详细讲解如何在centos中搭建一个SVN服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阅读技术文档，也是一种能力">
-<meta property="og:url" content="http://xqihang.github.io/2016/read-document/index.html">
+<meta property="og:title" content="linux(CentOs)安装及配置svn服务">
+<meta property="og:url" content="http://xqihang.github.io/2017/linux-install-svn/index.html">
 <meta property="og:site_name" content="墨凡说">
-<meta property="og:description" content="培养阅读文档的能力，对于程序猿的提升，很重要。">
-<meta property="og:updated_time" content="2016-10-21T11:44:30.000Z">
+<meta property="og:description" content="详细讲解如何在centos中搭建一个SVN服务器">
+<meta property="og:updated_time" content="2017-02-15T10:32:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阅读技术文档，也是一种能力">
-<meta name="twitter:description" content="培养阅读文档的能力，对于程序猿的提升，很重要。">
+<meta name="twitter:title" content="linux(CentOs)安装及配置svn服务">
+<meta name="twitter:description" content="详细讲解如何在centos中搭建一个SVN服务器">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://xqihang.github.io/2016/read-document/"/>
+  <link rel="canonical" href="http://xqihang.github.io/2017/linux-install-svn/"/>
 
 
-  <title> 阅读技术文档，也是一种能力 | 墨凡说 </title>
+  <title> linux(CentOs)安装及配置svn服务 | 墨凡说 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +259,7 @@
             
             
               
-                阅读技术文档，也是一种能力
+                linux(CentOs)安装及配置svn服务
               
             
           </h1>
@@ -271,8 +271,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-21T13:52:42+08:00" content="2016-10-21">
-              2016-10-21
+            <time itemprop="dateCreated" datetime="2017-02-15T18:11:15+08:00" content="2017-02-15">
+              2017-02-15
             </time>
           </span>
 
@@ -282,8 +282,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/read-document/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/read-document/" itemprop="commentsCount"></span>
+                <a href="/2017/linux-install-svn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/linux-install-svn/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -293,7 +293,7 @@
 
           
           
-             <span id="/2016/read-document/" class="leancloud_visitors" data-flag-title="阅读技术文档，也是一种能力">
+             <span id="/2017/linux-install-svn/" class="leancloud_visitors" data-flag-title="linux(CentOs)安装及配置svn服务">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -315,16 +315,28 @@
       
 
       
-        <p>培养阅读文档的能力，对于程序猿的提升，很重要。</p>
-<a id="more"></a>
-<p>一个优秀的程序员，必备的一个素养，就是能够<strong>高效率的阅读技术类文档</strong>( 下面简称文档 )，快速的从各种文档中，寻找到自己需要的内容并投入使用到当前工作中</p>
-<p>以我为例，对比了一下2015年前后对于技术的认识，惊奇的发现，就是在一次认认真真读技术文档，这就像是武林中人常说的：</p>
-<blockquote>
-<p><strong>打通了任督二脉，气聚丹田，发现气海涌动，达到天人合一的境界</strong></p>
-</blockquote>
-<p>说的可能夸张了些，不过高效率的阅读技术文档，确确实实的能在一定程度上提升在技术领域的视野、修养。</p>
-<p>作为程序员，英语阅读能力是最基本的要求，相对口语和写作来说也是最容易达到的，因为计算机类图书的那些常用单词就那么多，多读几本英语类技术图书，想不认识都难。</p>
-<p>如果程序员缺乏英语阅读能力，这将是你非常大的一块短板，如果意识到了，尽早补上。</p>
+        <p>详细讲解如何在centos中搭建一个SVN服务器<br><a id="more"></a></p>
+<h1 id="检查是否已安装"><a href="#检查是否已安装" class="headerlink" title="检查是否已安装"></a>检查是否已安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -qa subversion</div></pre></td></tr></table></figure>
+<h2 id="如果要卸载旧版本："><a href="#如果要卸载旧版本：" class="headerlink" title="如果要卸载旧版本："></a>如果要卸载旧版本：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum remove subversion</div></pre></td></tr></table></figure>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install subversion</div></pre></td></tr></table></figure>
+<h1 id="检查是否安装成功"><a href="#检查是否安装成功" class="headerlink" title="检查是否安装成功"></a>检查是否安装成功</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svnserve --version</div></pre></td></tr></table></figure>
+<p>如果成功会输出版本号</p>
+<h1 id="创建仓库目录"><a href="#创建仓库目录" class="headerlink" title="创建仓库目录"></a>创建仓库目录</h1><p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /home/svnroot</div></pre></td></tr></table></figure></p>
+<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svnadmin create /home/svnroot/game</div></pre></td></tr></table></figure>
+<h1 id="修改conf里的文件"><a href="#修改conf里的文件" class="headerlink" title="修改conf里的文件"></a>修改conf里的文件</h1><ul>
+<li><p>authz  （ 用户组及权限，大多数错误都易在此处 ）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[groups]</div><div class="line"></div><div class="line">root = root</div><div class="line">dev = dev,dev1</div><div class="line">design = design,design1</div><div class="line"></div><div class="line">[game:/]</div><div class="line"></div><div class="line">@root = rw</div><div class="line">@dev = rw</div><div class="line">@design = r</div></pre></td></tr></table></figure>
+</li>
+<li><p>passwd  （ svn用户 ）<br>  用户名 = 密码</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[users]</div><div class="line"></div><div class="line">root = 123456</div><div class="line">dev = 123456</div></pre></td></tr></table></figure>
+</li>
+<li><p>svnserve.conf （ 基本配置 ）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#匿名访问者权限</div><div class="line">anon-access = none</div><div class="line"></div><div class="line">#验证用户权限</div><div class="line">auth-access = write</div><div class="line"></div><div class="line">#密码文件地址</div><div class="line">password-db = passwd</div><div class="line"></div><div class="line">#权限文件地址</div><div class="line">authz-db = authz</div><div class="line"></div><div class="line">#项目名称（UUID）</div><div class="line">realm = game</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="启动svn服务"><a href="#启动svn服务" class="headerlink" title="启动svn服务"></a>启动svn服务</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svnserve -d -r /home/svnroot</div></pre></td></tr></table></figure>
+<p><strong> 启动SVN时后面跟的目录 一定要是父级且没有最后的/，  <code>/home/svnroot/</code>这样是错误的 </strong></p>
+<h1 id="连接SVN"><a href="#连接SVN" class="headerlink" title="连接SVN"></a>连接SVN</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn checkout svn://你的服务器地址/`game`</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -368,7 +380,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/文档/" rel="tag">#文档</a>
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/centos/" rel="tag">#centos</a>
+          
+            <a href="/tags/svn/" rel="tag">#svn</a>
           
         </div>
       
@@ -377,13 +393,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/nohup-run-node/" rel="next" title="在后台以守护进程方式运行Node.js">
+                <i class="fa fa-chevron-left"></i> 在后台以守护进程方式运行Node.js
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/php-upload-file/" rel="prev" title="附件上传超大文件，后端接受不到原因及解决办法集锦">
-                附件上传超大文件，后端接受不到原因及解决办法集锦 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,10 +414,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/read-document/"
-     data-title="阅读技术文档，也是一种能力"
+        <div class="ds-share flat" data-thread-key="2017/linux-install-svn/"
+     data-title="linux(CentOs)安装及配置svn服务"
      data-content=""
-     data-url="http://xqihang.github.io/2016/read-document/">
+     data-url="http://xqihang.github.io/2017/linux-install-svn/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -428,8 +444,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/read-document/"
-           data-title="阅读技术文档，也是一种能力" data-url="http://xqihang.github.io/2016/read-document/">
+      <div class="ds-thread" data-thread-key="2017/linux-install-svn/"
+           data-title="linux(CentOs)安装及配置svn服务" data-url="http://xqihang.github.io/2017/linux-install-svn/">
       </div>
     
   </div>
@@ -558,7 +574,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#检查是否已安装"><span class="nav-number">1.</span> <span class="nav-text">检查是否已安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果要卸载旧版本："><span class="nav-number">1.1.</span> <span class="nav-text">如果要卸载旧版本：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检查是否安装成功"><span class="nav-number">3.</span> <span class="nav-text">检查是否安装成功</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建仓库目录"><span class="nav-number">4.</span> <span class="nav-text">创建仓库目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建项目"><span class="nav-number">5.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改conf里的文件"><span class="nav-number">6.</span> <span class="nav-text">修改conf里的文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动svn服务"><span class="nav-number">7.</span> <span class="nav-text">启动svn服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#连接SVN"><span class="nav-number">8.</span> <span class="nav-text">连接SVN</span></a></li></ol></div>
             
           </div>
         </section>

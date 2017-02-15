@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="一段文字、一段音频，让网络将你我连接！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="墨凡说">
-<meta property="og:url" content="http://xqihang.github.io/archives/2016/index.html">
+<meta name="description" content="一台服务器既想要运行Nginx,又同时要运行Node.js？使用Nginx的反向代理轻松解决。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用nginx代理Node服务">
+<meta property="og:url" content="http://xqihang.github.io/2017/nginx-proxy-nodejs/index.html">
 <meta property="og:site_name" content="墨凡说">
-<meta property="og:description" content="一段文字、一段音频，让网络将你我连接！">
+<meta property="og:description" content="一台服务器既想要运行Nginx,又同时要运行Node.js？使用Nginx的反向代理轻松解决。">
+<meta property="og:updated_time" content="2017-02-15T09:58:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="墨凡说">
-<meta name="twitter:description" content="一段文字、一段音频，让网络将你我连接！">
+<meta name="twitter:title" content="使用nginx代理Node服务">
+<meta name="twitter:description" content="一台服务器既想要运行Nginx,又同时要运行Node.js？使用Nginx的反向代理轻松解决。">
 
 
 
@@ -115,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://xqihang.github.io/archives/2016/"/>
+  <link rel="canonical" href="http://xqihang.github.io/2017/nginx-proxy-nodejs/"/>
 
 
-  <title> 归档 | 墨凡说 </title>
+  <title> 使用nginx代理Node服务 | 墨凡说 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -149,7 +150,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -237,103 +238,177 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 7 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用nginx代理Node服务
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-15T17:52:26+08:00" content="2017-02-15">
+              2017-02-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/nginx-proxy-nodejs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/nginx-proxy-nodejs/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/nginx-proxy-nodejs/" class="leancloud_visitors" data-flag-title="使用nginx代理Node服务">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p>一台服务器既想要运行Nginx,又同时要运行Node.js？使用Nginx的反向代理轻松解决。<br><a id="more"></a></p>
+<h2 id="如何使用nginx代理Node服务"><a href="#如何使用nginx代理Node服务" class="headerlink" title="如何使用nginx代理Node服务"></a>如何使用nginx代理Node服务</h2><p>在nginx的站点配置目录（ /etc/nginx/conf.d/ ）中新建一个虚拟主机 ( xxx.conf ), 粘贴下方代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">upstream nodejs &#123;</div><div class="line">    server 127.0.0.1:3000; # Node.js监听的地址及端口号</div><div class="line">    keepalive 64;</div><div class="line">&#125;</div><div class="line"></div><div class="line">server &#123;</div><div class="line">    listen 80; # Nginx监听端口</div><div class="line">    server_name freelion.me; # 绑定的域名</div><div class="line">    access_log /var/log/nginx/test.log; # 日志文件</div><div class="line">    location / &#123;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">        proxy_set_header Host  $http_host;</div><div class="line">        proxy_set_header X-Nginx-Proxy true;</div><div class="line">        proxy_set_header Connection &quot;&quot;;</div><div class="line">        proxy_pass      http://nodejs;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wx_pay.jpg" alt="墨凡 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/ali_pay.jpg" alt="墨凡 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/php-upload-file/" itemprop="url">
-              
-                <span itemprop="name">附件上传超大文件，后端接受不到原因及解决办法集锦</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/centos-install-php7/" rel="next" title="教你在Centos6中如何安装最新的PHP7">
+                <i class="fa fa-chevron-left"></i> 教你在Centos6中如何安装最新的PHP7
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-22T19:23:00+08:00"
-              content="2016-10-22" >
-          10-22
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/npm-to-cnpm/" rel="prev" title="更换npm源为国内淘宝源">
+                更换npm源为国内淘宝源 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2017/nginx-proxy-nodejs/"
+     data-title="使用nginx代理Node服务"
+     data-content=""
+     data-url="http://xqihang.github.io/2017/nginx-proxy-nodejs/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/read-document/" itemprop="url">
-              
-                <span itemprop="name">阅读技术文档，也是一种能力</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-21T13:52:42+08:00"
-              content="2016-10-21" >
-          10-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-
+    </div>
+  </div>
 
 
           </div>
@@ -341,6 +416,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/nginx-proxy-nodejs/"
+           data-title="使用nginx代理Node服务" data-url="http://xqihang.github.io/2017/nginx-proxy-nodejs/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -360,8 +443,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -449,6 +541,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用nginx代理Node服务"><span class="nav-number">1.</span> <span class="nav-text">如何使用nginx代理Node服务</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -545,11 +648,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
 
 
   
