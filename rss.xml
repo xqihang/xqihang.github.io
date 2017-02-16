@@ -4,17 +4,17 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>墨凡说</title>
-    <link>http://hexo.freelion.me/</link>
+    <link>http://www.freelion.me/</link>
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
-    <description>一段文字、一段音频，让网络将你我连接！</description>
+    <description>一个在编程代码与诗意人生中穿行的95后、游戏黑洞、深夜情感治愈系主播。诗和远方就在笔端，用深情研磨，每个人都是诗人。就让我们在这片江湖重逢，邂逅这样的文字、聆听让彼此内心共振的声音！</description>
     <pubDate>Thu, 16 Feb 2017 03:38:17 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>iphone&amp;&amp;ipad中button按钮的默认样式修改</title>
-      <link>http://hexo.freelion.me/2017/iphone-ipad-button-default-style/</link>
-      <guid>http://hexo.freelion.me/2017/iphone-ipad-button-default-style/</guid>
+      <link>http://www.freelion.me/2017/iphone-ipad-button-default-style/</link>
+      <guid>http://www.freelion.me/2017/iphone-ipad-button-default-style/</guid>
       <pubDate>Thu, 16 Feb 2017 03:29:53 GMT</pubDate>
       <description>
       
@@ -23,13 +23,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2017/iphone-ipad-button-default-style/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2017/iphone-ipad-button-default-style/#disqus_thread</comments>
     </item>
     
     <item>
       <title>在Angular中输出HTML片段</title>
-      <link>http://hexo.freelion.me/2017/angular-bind-html/</link>
-      <guid>http://hexo.freelion.me/2017/angular-bind-html/</guid>
+      <link>http://www.freelion.me/2017/angular-bind-html/</link>
+      <guid>http://www.freelion.me/2017/angular-bind-html/</guid>
       <pubDate>Thu, 16 Feb 2017 03:25:48 GMT</pubDate>
       <description>
       
@@ -37,13 +37,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2017/angular-bind-html/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2017/angular-bind-html/#disqus_thread</comments>
     </item>
     
     <item>
       <title>chrome浏览器中取消自动填充密码</title>
-      <link>http://hexo.freelion.me/2017/chrome-form-autocomplete/</link>
-      <guid>http://hexo.freelion.me/2017/chrome-form-autocomplete/</guid>
+      <link>http://www.freelion.me/2017/chrome-form-autocomplete/</link>
+      <guid>http://www.freelion.me/2017/chrome-form-autocomplete/</guid>
       <pubDate>Thu, 16 Feb 2017 03:22:45 GMT</pubDate>
       <description>
       
@@ -51,13 +51,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2017/chrome-form-autocomplete/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2017/chrome-form-autocomplete/#disqus_thread</comments>
     </item>
     
     <item>
       <title>linux(CentOs)安装及配置svn服务</title>
-      <link>http://hexo.freelion.me/2017/linux-install-svn/</link>
-      <guid>http://hexo.freelion.me/2017/linux-install-svn/</guid>
+      <link>http://www.freelion.me/2017/linux-install-svn/</link>
+      <guid>http://www.freelion.me/2017/linux-install-svn/</guid>
       <pubDate>Wed, 15 Feb 2017 10:11:15 GMT</pubDate>
       <description>
       
@@ -65,13 +65,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2017/linux-install-svn/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2017/linux-install-svn/#disqus_thread</comments>
     </item>
     
     <item>
       <title>在后台以守护进程方式运行Node.js</title>
-      <link>http://hexo.freelion.me/2017/nohup-run-node/</link>
-      <guid>http://hexo.freelion.me/2017/nohup-run-node/</guid>
+      <link>http://www.freelion.me/2017/nohup-run-node/</link>
+      <guid>http://www.freelion.me/2017/nohup-run-node/</guid>
       <pubDate>Wed, 15 Feb 2017 10:06:07 GMT</pubDate>
       <description>
       
@@ -79,13 +79,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2017/nohup-run-node/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2017/nohup-run-node/#disqus_thread</comments>
     </item>
     
     <item>
       <title>更换npm源为国内淘宝源</title>
-      <link>http://hexo.freelion.me/2017/npm-to-cnpm/</link>
-      <guid>http://hexo.freelion.me/2017/npm-to-cnpm/</guid>
+      <link>http://www.freelion.me/2017/npm-to-cnpm/</link>
+      <guid>http://www.freelion.me/2017/npm-to-cnpm/</guid>
       <pubDate>Wed, 15 Feb 2017 10:03:29 GMT</pubDate>
       <description>
       
@@ -93,13 +93,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2017/npm-to-cnpm/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2017/npm-to-cnpm/#disqus_thread</comments>
     </item>
     
     <item>
       <title>使用nginx代理Node服务</title>
-      <link>http://hexo.freelion.me/2017/nginx-proxy-nodejs/</link>
-      <guid>http://hexo.freelion.me/2017/nginx-proxy-nodejs/</guid>
+      <link>http://www.freelion.me/2017/nginx-proxy-nodejs/</link>
+      <guid>http://www.freelion.me/2017/nginx-proxy-nodejs/</guid>
       <pubDate>Wed, 15 Feb 2017 09:52:26 GMT</pubDate>
       <description>
       
@@ -107,13 +107,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2017/nginx-proxy-nodejs/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2017/nginx-proxy-nodejs/#disqus_thread</comments>
     </item>
     
     <item>
       <title>教你在Centos6中如何安装最新的PHP7</title>
-      <link>http://hexo.freelion.me/2017/centos-install-php7/</link>
-      <guid>http://hexo.freelion.me/2017/centos-install-php7/</guid>
+      <link>http://www.freelion.me/2017/centos-install-php7/</link>
+      <guid>http://www.freelion.me/2017/centos-install-php7/</guid>
       <pubDate>Wed, 15 Feb 2017 09:44:50 GMT</pubDate>
       <description>
       
@@ -121,13 +121,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2017/centos-install-php7/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2017/centos-install-php7/#disqus_thread</comments>
     </item>
     
     <item>
       <title>附件上传超大文件，后端接受不到原因及解决办法集锦</title>
-      <link>http://hexo.freelion.me/2016/php-upload-file/</link>
-      <guid>http://hexo.freelion.me/2016/php-upload-file/</guid>
+      <link>http://www.freelion.me/2016/php-upload-file/</link>
+      <guid>http://www.freelion.me/2016/php-upload-file/</guid>
       <pubDate>Sat, 22 Oct 2016 11:23:00 GMT</pubDate>
       <description>
       
@@ -137,13 +137,13 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2016/php-upload-file/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2016/php-upload-file/#disqus_thread</comments>
     </item>
     
     <item>
       <title>阅读技术文档，也是一种能力</title>
-      <link>http://hexo.freelion.me/2016/read-document/</link>
-      <guid>http://hexo.freelion.me/2016/read-document/</guid>
+      <link>http://www.freelion.me/2016/read-document/</link>
+      <guid>http://www.freelion.me/2016/read-document/</guid>
       <pubDate>Fri, 21 Oct 2016 05:52:42 GMT</pubDate>
       <description>
       
@@ -151,7 +151,7 @@
       
       </description>
       
-      <comments>http://hexo.freelion.me/2016/read-document/#disqus_thread</comments>
+      <comments>http://www.freelion.me/2016/read-document/#disqus_thread</comments>
     </item>
     
   </channel>
