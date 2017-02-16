@@ -4,7 +4,7 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>墨凡说</title>
-    <link>http://xqihang.github.io/</link>
+    <link>http://hexo.freelion.me/</link>
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一段文字、一段音频，让网络将你我连接！</description>
@@ -13,8 +13,8 @@
     
     <item>
       <title>linux(CentOs)安装及配置svn服务</title>
-      <link>http://xqihang.github.io/2017/linux-install-svn/</link>
-      <guid>http://xqihang.github.io/2017/linux-install-svn/</guid>
+      <link>http://hexo.freelion.me/2017/linux-install-svn/</link>
+      <guid>http://hexo.freelion.me/2017/linux-install-svn/</guid>
       <pubDate>Wed, 15 Feb 2017 10:11:15 GMT</pubDate>
       <description>
       
@@ -22,13 +22,13 @@
       
       </description>
       
-      <comments>http://xqihang.github.io/2017/linux-install-svn/#disqus_thread</comments>
+      <comments>http://hexo.freelion.me/2017/linux-install-svn/#disqus_thread</comments>
     </item>
     
     <item>
       <title>在后台以守护进程方式运行Node.js</title>
-      <link>http://xqihang.github.io/2017/nohup-run-node/</link>
-      <guid>http://xqihang.github.io/2017/nohup-run-node/</guid>
+      <link>http://hexo.freelion.me/2017/nohup-run-node/</link>
+      <guid>http://hexo.freelion.me/2017/nohup-run-node/</guid>
       <pubDate>Wed, 15 Feb 2017 10:06:07 GMT</pubDate>
       <description>
       
@@ -36,13 +36,13 @@
       
       </description>
       
-      <comments>http://xqihang.github.io/2017/nohup-run-node/#disqus_thread</comments>
+      <comments>http://hexo.freelion.me/2017/nohup-run-node/#disqus_thread</comments>
     </item>
     
     <item>
       <title>更换npm源为国内淘宝源</title>
-      <link>http://xqihang.github.io/2017/npm-to-cnpm/</link>
-      <guid>http://xqihang.github.io/2017/npm-to-cnpm/</guid>
+      <link>http://hexo.freelion.me/2017/npm-to-cnpm/</link>
+      <guid>http://hexo.freelion.me/2017/npm-to-cnpm/</guid>
       <pubDate>Wed, 15 Feb 2017 10:03:29 GMT</pubDate>
       <description>
       
@@ -50,13 +50,13 @@
       
       </description>
       
-      <comments>http://xqihang.github.io/2017/npm-to-cnpm/#disqus_thread</comments>
+      <comments>http://hexo.freelion.me/2017/npm-to-cnpm/#disqus_thread</comments>
     </item>
     
     <item>
       <title>使用nginx代理Node服务</title>
-      <link>http://xqihang.github.io/2017/nginx-proxy-nodejs/</link>
-      <guid>http://xqihang.github.io/2017/nginx-proxy-nodejs/</guid>
+      <link>http://hexo.freelion.me/2017/nginx-proxy-nodejs/</link>
+      <guid>http://hexo.freelion.me/2017/nginx-proxy-nodejs/</guid>
       <pubDate>Wed, 15 Feb 2017 09:52:26 GMT</pubDate>
       <description>
       
@@ -64,13 +64,13 @@
       
       </description>
       
-      <comments>http://xqihang.github.io/2017/nginx-proxy-nodejs/#disqus_thread</comments>
+      <comments>http://hexo.freelion.me/2017/nginx-proxy-nodejs/#disqus_thread</comments>
     </item>
     
     <item>
       <title>教你在Centos6中如何安装最新的PHP7</title>
-      <link>http://xqihang.github.io/2017/centos-install-php7/</link>
-      <guid>http://xqihang.github.io/2017/centos-install-php7/</guid>
+      <link>http://hexo.freelion.me/2017/centos-install-php7/</link>
+      <guid>http://hexo.freelion.me/2017/centos-install-php7/</guid>
       <pubDate>Wed, 15 Feb 2017 09:44:50 GMT</pubDate>
       <description>
       
@@ -78,13 +78,13 @@
       
       </description>
       
-      <comments>http://xqihang.github.io/2017/centos-install-php7/#disqus_thread</comments>
+      <comments>http://hexo.freelion.me/2017/centos-install-php7/#disqus_thread</comments>
     </item>
     
     <item>
       <title>附件上传超大文件，后端接受不到原因及解决办法集锦</title>
-      <link>http://xqihang.github.io/2016/php-upload-file/</link>
-      <guid>http://xqihang.github.io/2016/php-upload-file/</guid>
+      <link>http://hexo.freelion.me/2016/php-upload-file/</link>
+      <guid>http://hexo.freelion.me/2016/php-upload-file/</guid>
       <pubDate>Sat, 22 Oct 2016 11:23:00 GMT</pubDate>
       <description>
       
@@ -94,13 +94,13 @@
       
       </description>
       
-      <comments>http://xqihang.github.io/2016/php-upload-file/#disqus_thread</comments>
+      <comments>http://hexo.freelion.me/2016/php-upload-file/#disqus_thread</comments>
     </item>
     
     <item>
       <title>阅读技术文档，也是一种能力</title>
-      <link>http://xqihang.github.io/2016/read-document/</link>
-      <guid>http://xqihang.github.io/2016/read-document/</guid>
+      <link>http://hexo.freelion.me/2016/read-document/</link>
+      <guid>http://hexo.freelion.me/2016/read-document/</guid>
       <pubDate>Fri, 21 Oct 2016 05:52:42 GMT</pubDate>
       <description>
       
@@ -108,7 +108,7 @@
       
       </description>
       
-      <comments>http://xqihang.github.io/2016/read-document/#disqus_thread</comments>
+      <comments>http://hexo.freelion.me/2016/read-document/#disqus_thread</comments>
     </item>
     
   </channel>
