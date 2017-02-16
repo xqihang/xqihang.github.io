@@ -8,8 +8,51 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一段文字、一段音频，让网络将你我连接！</description>
-    <pubDate>Wed, 15 Feb 2017 10:32:39 GMT</pubDate>
+    <pubDate>Thu, 16 Feb 2017 03:31:50 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>iphone&amp;&amp;ipad中button按钮的默认样式修改</title>
+      <link>http://hexo.freelion.me/2017/iphone-ipad-button-default-style/</link>
+      <guid>http://hexo.freelion.me/2017/iphone-ipad-button-default-style/</guid>
+      <pubDate>Thu, 16 Feb 2017 03:29:53 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;做过mobile网页的都知道，默认情况下，在iphone或者ipad设备上，button的样式极为丑陋，所以提供一下解决办法：&lt;/p&gt;
+&lt;p&gt;input[type=”button”], input[type=”submit”], input[type=”reset”] {&lt;
+      
+      </description>
+      
+      <comments>http://hexo.freelion.me/2017/iphone-ipad-button-default-style/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>在Angular中输出HTML片段</title>
+      <link>http://hexo.freelion.me/2017/angular-bind-html/</link>
+      <guid>http://hexo.freelion.me/2017/angular-bind-html/</guid>
+      <pubDate>Thu, 16 Feb 2017 03:25:48 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;今天尝试用&lt;strong&gt;AngularJs&lt;/strong&gt;做前端处理 JSON 数据，其中碰到 &lt;strong&gt;AngularJS&lt;/strong&gt; 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 &lt;strong&gt;data-ng-bind&lt;/strong&gt;的话是被转义过的，使用 &lt;code&gt;data-ng-bind-html&lt;/code&gt;则可以取消转义。&lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://hexo.freelion.me/2017/angular-bind-html/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>chrome浏览器中取消自动填充密码</title>
+      <link>http://hexo.freelion.me/2017/chrome-form-autocomplete/</link>
+      <guid>http://hexo.freelion.me/2017/chrome-form-autocomplete/</guid>
+      <pubDate>Thu, 16 Feb 2017 03:22:45 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;解决办法：&quot;&gt;&lt;a href=&quot;#解决办法：&quot; class=&quot;headerlink&quot; title=&quot;解决办法：&quot;&gt;&lt;/a&gt;解决办法：&lt;/h2&gt;&lt;p&gt;在&lt;code&gt;input[type=password]&lt;/code&gt;的输入框上添加   【 &lt;code&gt;autoco
+      
+      </description>
+      
+      <comments>http://hexo.freelion.me/2017/chrome-form-autocomplete/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>linux(CentOs)安装及配置svn服务</title>

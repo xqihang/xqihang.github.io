@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title><![CDATA[iphone&&ipad中button按钮的默认样式修改]]></title>
+      <url>%2F2017%2Fiphone-ipad-button-default-style%2F</url>
+      <content type="text"><![CDATA[做过mobile网页的都知道，默认情况下，在iphone或者ipad设备上，button的样式极为丑陋，所以提供一下解决办法： input[type=”button”], input[type=”submit”], input[type=”reset”] { -webkit-appearance: none; }]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[在Angular中输出HTML片段]]></title>
+      <url>%2F2017%2Fangular-bind-html%2F</url>
+      <content type="text"><![CDATA[今天尝试用AngularJs做前端处理 JSON 数据，其中碰到 AngularJS 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 data-ng-bind的话是被转义过的，使用 data-ng-bind-html则可以取消转义。 直接使用 data-ng-bind-html 的结果是: 1Error: [$sce:unsafe] Attempting to use an unsafe value in a safe context. HTML 片段需要先使用 $sce.trustAsHtml(html_in_string) 将标记为信任，然后才可以使用 data-ng-bind-html=&quot;html_in_string&quot; 取消转义，进而输出HTML片段，达到如期想要的结果。 正确写法如下： JS部分： 12data.content = $sce.trustAsHtml(&apos;这里填写你需要取消转义的html结构&apos;);$scope.data = data; HTML部分：1&lt;div class=&quot;content&quot; data-ng-bind-html=&quot;data.content&quot;&gt;&lt;/div&gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[chrome浏览器中取消自动填充密码]]></title>
+      <url>%2F2017%2Fchrome-form-autocomplete%2F</url>
+      <content type="text"><![CDATA[解决办法：在input[type=password]的输入框上添加 【 autocomplete=&quot;new-password&quot; 】 即可。 大家熟知的 autocomplete=off 并不能解决chrome下自动补全的问题]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[linux(CentOs)安装及配置svn服务]]></title>
       <url>%2F2017%2Flinux-install-svn%2F</url>
       <content type="text"><![CDATA[详细讲解如何在centos中搭建一个SVN服务器 检查是否已安装1rpm -qa subversion 如果要卸载旧版本：1yum remove subversion 安装1yum install subversion 检查是否安装成功1svnserve --version 如果成功会输出版本号 创建仓库目录例如：1mkdir /home/svnroot 创建项目1svnadmin create /home/svnroot/game 修改conf里的文件 authz （ 用户组及权限，大多数错误都易在此处 ） 1234567891011[groups]root = rootdev = dev,dev1design = design,design1[game:/]@root = rw@dev = rw@design = r passwd （ svn用户 ） 用户名 = 密码 1234[users]root = 123456dev = 123456 svnserve.conf （ 基本配置 ） 1234567891011121314#匿名访问者权限anon-access = none#验证用户权限auth-access = write#密码文件地址password-db = passwd#权限文件地址authz-db = authz#项目名称（UUID）realm = game 启动svn服务1svnserve -d -r /home/svnroot 启动SVN时后面跟的目录 一定要是父级且没有最后的/， /home/svnroot/这样是错误的 连接SVN1svn checkout svn://你的服务器地址/`game`]]></content>
