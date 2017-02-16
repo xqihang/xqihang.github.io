@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>墨凡说</title>
+    <link>http://xqihang.github.io/</link>
+    <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>一段文字、一段音频，让网络将你我连接！</description>
+    <pubDate>Wed, 15 Feb 2017 10:32:39 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>linux(CentOs)安装及配置svn服务</title>
+      <link>http://xqihang.github.io/2017/linux-install-svn/</link>
+      <guid>http://xqihang.github.io/2017/linux-install-svn/</guid>
+      <pubDate>Wed, 15 Feb 2017 10:11:15 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;详细讲解如何在centos中搭建一个SVN服务器&lt;br&gt;
+      
+      </description>
+      
+      <comments>http://xqihang.github.io/2017/linux-install-svn/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>在后台以守护进程方式运行Node.js</title>
+      <link>http://xqihang.github.io/2017/nohup-run-node/</link>
+      <guid>http://xqihang.github.io/2017/nohup-run-node/</guid>
+      <pubDate>Wed, 15 Feb 2017 10:06:07 GMT</pubDate>
+      <description>
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
+      
+      </description>
+      
+      <comments>http://xqihang.github.io/2017/nohup-run-node/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>更换npm源为国内淘宝源</title>
+      <link>http://xqihang.github.io/2017/npm-to-cnpm/</link>
+      <guid>http://xqihang.github.io/2017/npm-to-cnpm/</guid>
+      <pubDate>Wed, 15 Feb 2017 10:03:29 GMT</pubDate>
+      <description>
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
+      
+      </description>
+      
+      <comments>http://xqihang.github.io/2017/npm-to-cnpm/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>使用nginx代理Node服务</title>
+      <link>http://xqihang.github.io/2017/nginx-proxy-nodejs/</link>
+      <guid>http://xqihang.github.io/2017/nginx-proxy-nodejs/</guid>
+      <pubDate>Wed, 15 Feb 2017 09:52:26 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;一台服务器既想要运行Nginx,又同时要运行Node.js？使用Nginx的反向代理轻松解决。&lt;br&gt;
+      
+      </description>
+      
+      <comments>http://xqihang.github.io/2017/nginx-proxy-nodejs/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>教你在Centos6中如何安装最新的PHP7</title>
+      <link>http://xqihang.github.io/2017/centos-install-php7/</link>
+      <guid>http://xqihang.github.io/2017/centos-install-php7/</guid>
+      <pubDate>Wed, 15 Feb 2017 09:44:50 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Centos6中使用yum进行安装PHP，往往是较低的版本，这篇文字教你如何替换旧的PHP为PHP7&lt;br&gt;
+      
+      </description>
+      
+      <comments>http://xqihang.github.io/2017/centos-install-php7/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>附件上传超大文件，后端接受不到原因及解决办法集锦</title>
+      <link>http://xqihang.github.io/2016/php-upload-file/</link>
+      <guid>http://xqihang.github.io/2016/php-upload-file/</guid>
+      <pubDate>Sat, 22 Oct 2016 11:23:00 GMT</pubDate>
+      <description>
+      
+        &lt;blockquote&gt;
+&lt;p&gt;前段时间做了一个类似&lt;strong&gt;附件上传&lt;/strong&gt;的功能，前端请求正常，可后端[php]就是接受不到大文件&lt;strong&gt;（大于20M）&lt;/strong&gt;，于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！&lt;/p&gt;
+&lt;/blockquote&gt;
+      
+      </description>
+      
+      <comments>http://xqihang.github.io/2016/php-upload-file/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>阅读技术文档，也是一种能力</title>
+      <link>http://xqihang.github.io/2016/read-document/</link>
+      <guid>http://xqihang.github.io/2016/read-document/</guid>
+      <pubDate>Fri, 21 Oct 2016 05:52:42 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;培养阅读文档的能力，对于程序猿的提升，很重要。&lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://xqihang.github.io/2016/read-document/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
