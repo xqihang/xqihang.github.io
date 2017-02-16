@@ -5,14 +5,14 @@
     <entry>
       <title><![CDATA[iphone&&ipad中button按钮的默认样式修改]]></title>
       <url>%2F2017%2Fiphone-ipad-button-default-style%2F</url>
-      <content type="text"><![CDATA[做过mobile网页的都知道，默认情况下，在iphone或者ipad设备上，button的样式极为丑陋，所以提供一下解决办法： 12345input[type=&quot;button&quot;], input[type=&quot;submit&quot;], input[type=&quot;reset&quot;] &#123; -webkit-appearance: none;&#125;]]></content>
+      <content type="text"><![CDATA[做过mobile网页的都知道，默认情况下，在iphone或者ipad设备上，button的样式极为丑陋，所以提供一下解决办法： 12345input[type="button"], input[type="submit"], input[type="reset"] &#123; -webkit-appearance: none;&#125;]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[在Angular中输出HTML片段]]></title>
       <url>%2F2017%2Fangular-bind-html%2F</url>
-      <content type="text"><![CDATA[今天尝试用AngularJs做前端处理 JSON 数据，其中碰到 AngularJS 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 data-ng-bind的话是被转义过的，使用 data-ng-bind-html则可以取消转义。 直接使用 data-ng-bind-html 的结果是: 1Error: [$sce:unsafe] Attempting to use an unsafe value in a safe context. HTML 片段需要先使用 $sce.trustAsHtml(html_in_string) 将标记为信任，然后才可以使用 data-ng-bind-html=&quot;html_in_string&quot; 取消转义，进而输出HTML片段，达到如期想要的结果。 正确写法如下： JS部分： 12data.content = $sce.trustAsHtml(&apos;这里填写你需要取消转义的html结构&apos;);$scope.data = data; HTML部分：1&lt;div class=&quot;content&quot; data-ng-bind-html=&quot;data.content&quot;&gt;&lt;/div&gt;]]></content>
+      <content type="text"><![CDATA[今天尝试用AngularJs做前端处理 JSON 数据，其中碰到 AngularJS 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 data-ng-bind的话是被转义过的，使用 data-ng-bind-html则可以取消转义。 直接使用 data-ng-bind-html 的结果是: 1Error: [$sce:unsafe] Attempting to use an unsafe value in a safe context. HTML 片段需要先使用 $sce.trustAsHtml(html_in_string) 将标记为信任，然后才可以使用 data-ng-bind-html=&quot;html_in_string&quot; 取消转义，进而输出HTML片段，达到如期想要的结果。 正确写法如下： JS部分： 12data.content = $sce.trustAsHtml('这里填写你需要取消转义的html结构');$scope.data = data; HTML部分：1&lt;div class="content" data-ng-bind-html="data.content"&gt;&lt;/div&gt;]]></content>
     </entry>
 
     
