@@ -53,9 +53,9 @@
     </summary>
     
     
-      <category term="linux" scheme="http://xqihang.github.io/tags/linux/"/>
-    
       <category term="centos" scheme="http://xqihang.github.io/tags/centos/"/>
+    
+      <category term="linux" scheme="http://xqihang.github.io/tags/linux/"/>
     
       <category term="svn" scheme="http://xqihang.github.io/tags/svn/"/>
     
@@ -152,11 +152,11 @@
     </summary>
     
     
-      <category term="linux" scheme="http://xqihang.github.io/tags/linux/"/>
-    
       <category term="centos" scheme="http://xqihang.github.io/tags/centos/"/>
     
       <category term="php" scheme="http://xqihang.github.io/tags/php/"/>
+    
+      <category term="linux" scheme="http://xqihang.github.io/tags/linux/"/>
     
   </entry>
   
