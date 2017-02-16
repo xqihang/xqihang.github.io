@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[iphone&&ipad中button按钮的默认样式修改]]></title>
+      <title><![CDATA[iphone/ipad中button按钮的默认样式修改]]></title>
       <url>%2F2017%2Fiphone-ipad-button-default-style%2F</url>
       <content type="text"><![CDATA[做过mobile网页的都知道，默认情况下，在iphone或者ipad设备上，button的样式极为丑陋，所以提供一下解决办法： 12345input[type="button"], input[type="submit"], input[type="reset"] &#123; -webkit-appearance: none;&#125;]]></content>
     </entry>
