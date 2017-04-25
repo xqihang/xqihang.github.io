@@ -304,6 +304,115 @@
             
               
                 
+                <a class="post-title-link" href="/2017/javascript-prototype-constructor/" itemprop="url">
+                  javascript-prototype-constructor
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-25T13:52:03+08:00" content="2017-04-25">
+              2017-04-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/javascript-prototype-constructor/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/javascript-prototype-constructor/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/javascript-prototype-constructor/" class="leancloud_visitors" data-flag-title="javascript-prototype-constructor">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//构造函数</span></div><div class="line"><span class="comment">//使自己的对象多次复制，同时实例根据设置的访问等级可以访问其内部的属性和方法</span></div><div class="line"><span class="comment">//当对象被实例化后，构造函数会立即执行它所包含的任何代码</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myObject</span>(<span class="params">msg</span>)</span>&#123;</div><div class="line"> <span class="comment">//特权属性(公有属性)</span></div><div class="line"> <span class="keyword">this</span>.myMsg = msg; <span class="comment">//只在被实例化后的实例中可调用</span></div><div class="line"> <span class="keyword">this</span>.address = <span class="string">'上海'</span>;</div><div class="line"> </div><div class="line"> <span class="comment">//私有属性</span></div><div class="line"> <span class="keyword">var</span> name = <span class="string">'豪情'</span>;</div><div class="line"> <span class="keyword">var</span> age = <span class="number">29</span>;</div><div class="line"> <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line"> </div><div class="line"> <span class="comment">//私有方法</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     alert(that.name);</div><div class="line"> &#125;</div><div class="line"> <span class="comment">//特权方法(公有方法)</span></div><div class="line"> <span class="comment">//能被外部公开访问</span></div><div class="line"> <span class="comment">//这个方法每次实例化都要重新构造而prototype是原型共享，所有实例化后，都共同引用同一个</span></div><div class="line"> <span class="keyword">this</span>.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     alert(name); <span class="comment">//在公有方法中可以访问私有成员</span></div><div class="line"> &#125;</div><div class="line"> <span class="comment">//私有和特权成员在函数的内部，在构造函数创建的每个实例中都会包含同样的私有和特权成员的副本，</span></div><div class="line"> <span class="comment">//因而实例越多占用的内存越多</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//公有方法</span></div><div class="line"><span class="comment">//适用于通过new关键字实例化的该对象的每个实例</span></div><div class="line"><span class="comment">//向prototype中添加成员将会把新方法添加到构造函数的底层中去</span></div><div class="line">myObject.prototype.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> alert(<span class="string">'hello everyone!'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//静态属性</span></div><div class="line"><span class="comment">//适用于对象的特殊实例，就是作为Function对象实例的构造函数本身</span></div><div class="line">myObject.name = <span class="string">'china'</span>;</div><div class="line"><span class="comment">//静态方法</span></div><div class="line">myObject.alertname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="comment">//实例化</span></div><div class="line"><span class="keyword">var</span> m1 = <span class="keyword">new</span> myObject(<span class="string">'111'</span>);</div><div class="line"><span class="comment">//---- 测试属性 ----//</span></div><div class="line"><span class="built_in">console</span>.log(myObject.name); <span class="comment">//china</span></div><div class="line"><span class="built_in">console</span>.log(m1.name); <span class="comment">//undefined, 静态属性不适用于一般实例</span></div><div class="line"><span class="built_in">console</span>.log(m1.constructor.name); <span class="comment">//china, 想访问类的静态属性，先访问该实例的构造函数，然后在访问该类静态属性</span></div><div class="line"><span class="built_in">console</span>.log(myObject.address); <span class="comment">//undefined, myObject中的this指的不是函数本身，而是调用address的对象，而且只能是对象</span></div><div class="line"><span class="built_in">console</span>.log(m1.address); <span class="comment">//上海 此时this指的是实例化后的m1</span></div><div class="line"></div><div class="line"><span class="comment">//---- 测试方法 ----//</span></div><div class="line">myObject.alertname(); <span class="comment">//china,直接调用函数的类方法</span></div><div class="line">m1.alertname(); <span class="comment">//FF: m1.alertname is not a function, alertname 是myObject类的方法，和实例对象没有直接关系</span></div><div class="line">m1.constructor.alertname(); <span class="comment">//china, 调用该对象构造函数（类函数）的方法（函数）</span></div><div class="line">m1.sayHello(); <span class="comment">//hello everyone, myObject类的prototype原型下的方法将会被实例继承</span></div><div class="line">myObject.sayHello(); <span class="comment">//myObject.sayHello is not a function，sayHello是原型方法，不是类的方法</span></div><div class="line"></div><div class="line"><span class="comment">//---- 测试prototype ----//</span></div><div class="line"><span class="built_in">console</span>.log(m1.prototype); <span class="comment">//undefined, 实例对象没有prototype</span></div><div class="line"><span class="built_in">console</span>.log(myObject.prototype); <span class="comment">//Object </span></div><div class="line">alert(myObject.prototype.constructor); <span class="comment">//console.log返回myObject(msg)，此时alert()更清楚，相当于myObject</span></div><div class="line"><span class="built_in">console</span>.log(myObject.prototype.constructor.name); <span class="comment">//china, 相当于myObject.name;</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/iphone-ipad-button-default-style/" itemprop="url">
                   iphone/ipad中button按钮的默认样式修改
                 </a>
@@ -1287,121 +1396,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/read-document/" itemprop="url">
-                  阅读技术文档，也是一种能力
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-21T13:52:42+08:00" content="2016-10-21">
-              2016-10-21
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/read-document/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/read-document/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/read-document/" class="leancloud_visitors" data-flag-title="阅读技术文档，也是一种能力">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>培养阅读文档的能力，对于程序猿的提升，很重要。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/read-document/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1440,7 +1441,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
