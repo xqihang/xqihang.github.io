@@ -1,84 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
-  
-    
-    <entry>
-      <title><![CDATA[javascript-prototype-constructor]]></title>
-      <url>%2F2017%2Fjavascript-prototype-constructor%2F</url>
-      <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960//构造函数//使自己的对象多次复制，同时实例根据设置的访问等级可以访问其内部的属性和方法//当对象被实例化后，构造函数会立即执行它所包含的任何代码function myObject(msg)&#123; //特权属性(公有属性) this.myMsg = msg; //只在被实例化后的实例中可调用 this.address = '上海'; //私有属性 var name = '豪情'; var age = 29; var that = this; //私有方法 function sayName()&#123; alert(that.name); &#125; //特权方法(公有方法) //能被外部公开访问 //这个方法每次实例化都要重新构造而prototype是原型共享，所有实例化后，都共同引用同一个 this.sayAge = function()&#123; alert(name); //在公有方法中可以访问私有成员 &#125; //私有和特权成员在函数的内部，在构造函数创建的每个实例中都会包含同样的私有和特权成员的副本， //因而实例越多占用的内存越多&#125;//公有方法//适用于通过new关键字实例化的该对象的每个实例//向prototype中添加成员将会把新方法添加到构造函数的底层中去myObject.prototype.sayHello = function()&#123; alert('hello everyone!');&#125;//静态属性//适用于对象的特殊实例，就是作为Function对象实例的构造函数本身myObject.name = 'china';//静态方法myObject.alertname = function()&#123; alert(this.name);&#125;//实例化var m1 = new myObject('111');//---- 测试属性 ----//console.log(myObject.name); //chinaconsole.log(m1.name); //undefined, 静态属性不适用于一般实例console.log(m1.constructor.name); //china, 想访问类的静态属性，先访问该实例的构造函数，然后在访问该类静态属性console.log(myObject.address); //undefined, myObject中的this指的不是函数本身，而是调用address的对象，而且只能是对象console.log(m1.address); //上海 此时this指的是实例化后的m1//---- 测试方法 ----//myObject.alertname(); //china,直接调用函数的类方法m1.alertname(); //FF: m1.alertname is not a function, alertname 是myObject类的方法，和实例对象没有直接关系m1.constructor.alertname(); //china, 调用该对象构造函数（类函数）的方法（函数）m1.sayHello(); //hello everyone, myObject类的prototype原型下的方法将会被实例继承myObject.sayHello(); //myObject.sayHello is not a function，sayHello是原型方法，不是类的方法//---- 测试prototype ----//console.log(m1.prototype); //undefined, 实例对象没有prototypeconsole.log(myObject.prototype); //Object alert(myObject.prototype.constructor); //console.log返回myObject(msg)，此时alert()更清楚，相当于myObjectconsole.log(myObject.prototype.constructor.name); //china, 相当于myObject.name;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[iphone/ipad中button按钮的默认样式修改]]></title>
-      <url>%2F2017%2Fiphone-ipad-button-default-style%2F</url>
-      <content type="text"><![CDATA[做过mobile网页的都知道，默认情况下，在iphone或者ipad设备上，button的样式极为丑陋，所以提供一下解决办法： 12345input[type="button"], input[type="submit"], input[type="reset"] &#123; -webkit-appearance: none;&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[在Angular中输出HTML片段]]></title>
-      <url>%2F2017%2Fangular-bind-html%2F</url>
-      <content type="text"><![CDATA[今天尝试用AngularJs做前端处理 JSON 数据，其中碰到 AngularJS 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 data-ng-bind的话是被转义过的，使用 data-ng-bind-html则可以取消转义。 直接使用 data-ng-bind-html 的结果是: 1Error: [$sce:unsafe] Attempting to use an unsafe value in a safe context. HTML 片段需要先使用 $sce.trustAsHtml(html_in_string) 将标记为信任，然后才可以使用 data-ng-bind-html=&quot;html_in_string&quot; 取消转义，进而输出HTML片段，达到如期想要的结果。 正确写法如下： JS部分： 12data.content = $sce.trustAsHtml('这里填写你需要取消转义的html结构');$scope.data = data; HTML部分：1&lt;div class="content" data-ng-bind-html="data.content"&gt;&lt;/div&gt;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[chrome浏览器中取消自动填充密码]]></title>
-      <url>%2F2017%2Fchrome-form-autocomplete%2F</url>
-      <content type="text"><![CDATA[解决办法：在input[type=password]的输入框上添加 【 autocomplete=&quot;new-password&quot; 】 即可。 大家熟知的 autocomplete=off 并不能解决chrome下自动补全的问题]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[linux(CentOs)安装及配置svn服务]]></title>
-      <url>%2F2017%2Flinux-install-svn%2F</url>
-      <content type="text"><![CDATA[详细讲解如何在centos中搭建一个SVN服务器 检查是否已安装1rpm -qa subversion 如果要卸载旧版本：1yum remove subversion 安装1yum install subversion 检查是否安装成功1svnserve --version 如果成功会输出版本号 创建仓库目录例如：1mkdir /home/svnroot 创建项目1svnadmin create /home/svnroot/game 修改conf里的文件 authz （ 用户组及权限，大多数错误都易在此处 ） 1234567891011[groups]root = rootdev = dev,dev1design = design,design1[game:/]@root = rw@dev = rw@design = r passwd （ svn用户 ） 用户名 = 密码 1234[users]root = 123456dev = 123456 svnserve.conf （ 基本配置 ） 1234567891011121314#匿名访问者权限anon-access = none#验证用户权限auth-access = write#密码文件地址password-db = passwd#权限文件地址authz-db = authz#项目名称（UUID）realm = game 启动svn服务1svnserve -d -r /home/svnroot 启动SVN时后面跟的目录 一定要是父级且没有最后的/， /home/svnroot/这样是错误的 连接SVN1svn checkout svn://你的服务器地址/`game`]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[在后台以守护进程方式运行Node.js]]></title>
-      <url>%2F2017%2Fnohup-run-node%2F</url>
-      <content type="text"><![CDATA[1nohup node bin/www &gt; log 2&gt;&amp;1 &amp; 在使用SSH链接工具连接时，运行上述命令后执行 exit]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[更换npm源为国内淘宝源]]></title>
-      <url>%2F2017%2Fnpm-to-cnpm%2F</url>
-      <content type="text"><![CDATA[1npm install -g cnpm --registry=https://registry.npm.taobao.org]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[使用nginx代理Node服务]]></title>
-      <url>%2F2017%2Fnginx-proxy-nodejs%2F</url>
-      <content type="text"><![CDATA[一台服务器既想要运行Nginx,又同时要运行Node.js？使用Nginx的反向代理轻松解决。 如何使用nginx代理Node服务在nginx的站点配置目录（ /etc/nginx/conf.d/ ）中新建一个虚拟主机 ( xxx.conf ), 粘贴下方代码 1234567891011121314151617181920upstream nodejs &#123; server 127.0.0.1:3000; # Node.js监听的地址及端口号 keepalive 64;&#125;server &#123; listen 80; # Nginx监听端口 server_name freelion.me; # 绑定的域名 access_log /var/log/nginx/test.log; # 日志文件 location / &#123; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Nginx-Proxy true; proxy_set_header Connection &quot;&quot;; proxy_pass http://nodejs; &#125;&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[教你在Centos6中如何安装最新的PHP7]]></title>
-      <url>%2F2017%2Fcentos-install-php7%2F</url>
-      <content type="text"><![CDATA[Centos6中使用yum进行安装PHP，往往是较低的版本，这篇文字教你如何替换旧的PHP为PHP7 更新软件源wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpmwget http://rpms.remirepo.net/enterprise/remi-release-6.rpmrpm -Uvh remi-release-6.rpm epel-release-latest-6.noarch.rpm 安装yum install php70-php php70-php-pear php70-php-bcmath php70-php-pecl-jsond-devel php70-php-mysqlnd php70-php-gd php70-php-common php70-php-fpm php70-php-intl php70-php-cli php70-php php70-php-xml php70-php-opcache php70-php-pecl-apcu php70-php-pecl-jsond php70-php-pdo php70-php-gmp php70-php-process php70-php-pecl-imagick php70-php-devel php70-php-mbstring php70-php-mcrypt 为php和php-fpm制作符号链接cp /usr/bin/php{,.bak}ln -s /usr/bin/php70 /usr/bin/phpcp /usr/sbin/php-fpm{,.bak}ln -s /opt/remi/php70/root/usr/sbin/php-fpm /usr/sbin/php-fpm 检查PHP和php-fpm版本并启动php-fpmphp -vphp-fpm -vservice php-fpm restart]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[附件上传超大文件，后端接受不到原因及解决办法集锦]]></title>
-      <url>%2F2016%2Fphp-upload-file%2F</url>
-      <content type="text"><![CDATA[前段时间做了一个类似附件上传的功能，前端请求正常，可后端[php]就是接受不到大文件（大于20M），于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！ 下面分别是各种原因以及解决办法：第1种情况：upload_tmp_dir文件上传时存放文件的临时目录必须是开启的并且是 PHP 进程所有者用户可写的目录。如果未指定则 PHP 使用系统默认值。php.ini文件中upload_tmp_dir用来说明PHP上传的文件放置的临时目录，要想上传文件，得保证服务器没有关闭临时文件并对该文件夹有写入的权限。 第2种情况：max_execution_timemax_execution_time 的值必须足够大。变量 max_execution_time 设置了在强制终止脚本前PHP等待脚本执行完毕的时间，此时间以秒计算。当脚本进入了一个无限循环状态时此变量非常有用。然而，当存在一个需要很长时间完成的合法活动时（例如上传大型文件），这项功能也会导致操作失败。在这样的情况下必须考虑将此变量值增大，以避免PHP在脚本正在执行某些重要过程的时候将脚本关闭，例如设置为 90 秒。max_execution_time = 90 注意在php函数中还有个set_time_limit 函数，和以上这个设置的作用是相同的，这两者的区别就是 以上是在 php.ini 文件中设置的，而set_time_limit 是写在php文件中的。所以也可以通过在页面中用 set_time_limit 设置程序的最长执行时间，比如无限制即：set_time_limit(0); 第3种情况：file_uploads = On默认值为on，意思是允许通过 HTTP 进行文件上传，此选项不能设置为OFF。 第4种情况：upload_max_filesize = 2M设定文件上传的大小的最大值，php.ini配置文件中的默认文件上传大小为2M，php初学者容易犯的一个错误是在编写文件上传功能时通过设置上传文件最大大小的表单区域，即允许上传文件的最大值，max_file_size（隐藏值域）的值来规定上传文件的大小，其实一般别人可以绕过这个值，所以安全起见，最好是在 php.ini 配置文件中配置 upload_max_filesize 选项，设定文件上传的大小。默认 upload_max_filesize = 2M，即文件上传的大小为2M，如果你想上传超过8M的文件，比如20M，你必须设定 upload_max_filesize = 20M。 第5种情况：post_max_size这个值也必须足够大。这个变量也是一个同表单提交相关的变量，它限制的是客户端通过POST方法进行一次表单提交时PHP程序所能够接收的最大数据量。一般情况下，将此值的值设置的比 upload_max_filesize 略大即可，比如要上传20MB的文件，此值可以设置为 21MB。 第6种情况：max_input_time此变量可以以秒为单位对通过POST、GET以及PUT方式接收数据时间进行限制。如果应用程序所运行环境处在网络比较慢的情况下，则需要增加此值以增大接收数据所需要的时间，比如将此值设置为 90秒, max_input_time = 90。 第7种情况：memory_limit这个值也必须足够大，为了避免正在运行的脚本大量使用系统可用内存，PHP允许定义内存使用限额。通过memory_limit变量来指定单个脚本程序可以使用的最大内存容量。变量memory_limit的值应当适当大于post_max_size的值。 第8种情况：client_max_body_size另外如果你的主机是 nginx 操作系统的话，如果以上操作都不行的话，记得在nginx 的配置文件里面加上 client_max_body_size 20m; 这样一句，即表示最大允许上传20MB，具体根据自己的情况来。我的nginx 配置文件的位置在 /usr/local/nginx/conf/nginx.conf。]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[阅读技术文档，也是一种能力]]></title>
-      <url>%2F2016%2Fread-document%2F</url>
-      <content type="text"><![CDATA[培养阅读文档的能力，对于程序猿的提升，很重要。 一个优秀的程序员，必备的一个素养，就是能够高效率的阅读技术类文档( 下面简称文档 )，快速的从各种文档中，寻找到自己需要的内容并投入使用到当前工作中 以我为例，对比了一下2015年前后对于技术的认识，惊奇的发现，就是在一次认认真真读技术文档，这就像是武林中人常说的： 打通了任督二脉，气聚丹田，发现气海涌动，达到天人合一的境界 说的可能夸张了些，不过高效率的阅读技术文档，确确实实的能在一定程度上提升在技术领域的视野、修养。 作为程序员，英语阅读能力是最基本的要求，相对口语和写作来说也是最容易达到的，因为计算机类图书的那些常用单词就那么多，多读几本英语类技术图书，想不认识都难。 如果程序员缺乏英语阅读能力，这将是你非常大的一块短板，如果意识到了，尽早补上。]]></content>
-    </entry>
-
-    
-  
-  
+  <entry>
+    <title><![CDATA[javascript-prototype-constructor]]></title>
+    <url>%2F2017%2Fjavascript-prototype-constructor%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960//构造函数//使自己的对象多次复制，同时实例根据设置的访问等级可以访问其内部的属性和方法//当对象被实例化后，构造函数会立即执行它所包含的任何代码function myObject(msg)&#123; //特权属性(公有属性) this.myMsg = msg; //只在被实例化后的实例中可调用 this.address = '上海'; //私有属性 var name = '豪情'; var age = 29; var that = this; //私有方法 function sayName()&#123; alert(that.name); &#125; //特权方法(公有方法) //能被外部公开访问 //这个方法每次实例化都要重新构造而prototype是原型共享，所有实例化后，都共同引用同一个 this.sayAge = function()&#123; alert(name); //在公有方法中可以访问私有成员 &#125; //私有和特权成员在函数的内部，在构造函数创建的每个实例中都会包含同样的私有和特权成员的副本， //因而实例越多占用的内存越多&#125;//公有方法//适用于通过new关键字实例化的该对象的每个实例//向prototype中添加成员将会把新方法添加到构造函数的底层中去myObject.prototype.sayHello = function()&#123; alert('hello everyone!');&#125;//静态属性//适用于对象的特殊实例，就是作为Function对象实例的构造函数本身myObject.name = 'china';//静态方法myObject.alertname = function()&#123; alert(this.name);&#125;//实例化var m1 = new myObject('111');//---- 测试属性 ----//console.log(myObject.name); //chinaconsole.log(m1.name); //undefined, 静态属性不适用于一般实例console.log(m1.constructor.name); //china, 想访问类的静态属性，先访问该实例的构造函数，然后在访问该类静态属性console.log(myObject.address); //undefined, myObject中的this指的不是函数本身，而是调用address的对象，而且只能是对象console.log(m1.address); //上海 此时this指的是实例化后的m1//---- 测试方法 ----//myObject.alertname(); //china,直接调用函数的类方法m1.alertname(); //FF: m1.alertname is not a function, alertname 是myObject类的方法，和实例对象没有直接关系m1.constructor.alertname(); //china, 调用该对象构造函数（类函数）的方法（函数）m1.sayHello(); //hello everyone, myObject类的prototype原型下的方法将会被实例继承myObject.sayHello(); //myObject.sayHello is not a function，sayHello是原型方法，不是类的方法//---- 测试prototype ----//console.log(m1.prototype); //undefined, 实例对象没有prototypeconsole.log(myObject.prototype); //Object alert(myObject.prototype.constructor); //console.log返回myObject(msg)，此时alert()更清楚，相当于myObjectconsole.log(myObject.prototype.constructor.name); //china, 相当于myObject.name;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[iphone/ipad中button按钮的默认样式修改]]></title>
+    <url>%2F2017%2Fiphone-ipad-button-default-style%2F</url>
+    <content type="text"><![CDATA[做过mobile网页的都知道，默认情况下，在iphone或者ipad设备上，button的样式极为丑陋，所以提供一下解决办法： 12345input[type="button"], input[type="submit"], input[type="reset"] &#123; -webkit-appearance: none;&#125;]]></content>
+      <tags>
+        <tag>HTML</tag>
+        <tag>mobile</tag>
+        <tag>iphone</tag>
+        <tag>button</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在Angular中输出HTML片段]]></title>
+    <url>%2F2017%2Fangular-bind-html%2F</url>
+    <content type="text"><![CDATA[今天尝试用AngularJs做前端处理 JSON 数据，其中碰到 AngularJS 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 data-ng-bind的话是被转义过的，使用 data-ng-bind-html则可以取消转义。 直接使用 data-ng-bind-html 的结果是: 1Error: [$sce:unsafe] Attempting to use an unsafe value in a safe context. HTML 片段需要先使用 $sce.trustAsHtml(html_in_string) 将标记为信任，然后才可以使用 data-ng-bind-html=&quot;html_in_string&quot; 取消转义，进而输出HTML片段，达到如期想要的结果。 正确写法如下： JS部分： 12data.content = $sce.trustAsHtml('这里填写你需要取消转义的html结构');$scope.data = data; HTML部分：1&lt;div class="content" data-ng-bind-html="data.content"&gt;&lt;/div&gt;]]></content>
+      <tags>
+        <tag>HTML</tag>
+        <tag>Angular</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[chrome浏览器中取消自动填充密码]]></title>
+    <url>%2F2017%2Fchrome-form-autocomplete%2F</url>
+    <content type="text"><![CDATA[解决办法：在input[type=password]的输入框上添加 【 autocomplete=&quot;new-password&quot; 】 即可。 大家熟知的 autocomplete=off 并不能解决chrome下自动补全的问题]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[linux(CentOs)安装及配置svn服务]]></title>
+    <url>%2F2017%2Flinux-install-svn%2F</url>
+    <content type="text"><![CDATA[详细讲解如何在centos中搭建一个SVN服务器 检查是否已安装1rpm -qa subversion 如果要卸载旧版本：1yum remove subversion 安装1yum install subversion 检查是否安装成功1svnserve --version 如果成功会输出版本号 创建仓库目录例如：1mkdir /home/svnroot 创建项目1svnadmin create /home/svnroot/game 修改conf里的文件 authz （ 用户组及权限，大多数错误都易在此处 ） 1234567891011[groups]root = rootdev = dev,dev1design = design,design1[game:/]@root = rw@dev = rw@design = r passwd （ svn用户 ） 用户名 = 密码 1234[users]root = 123456dev = 123456 svnserve.conf （ 基本配置 ） 1234567891011121314#匿名访问者权限anon-access = none#验证用户权限auth-access = write#密码文件地址password-db = passwd#权限文件地址authz-db = authz#项目名称（UUID）realm = game 启动svn服务1svnserve -d -r /home/svnroot 启动SVN时后面跟的目录 一定要是父级且没有最后的/， /home/svnroot/这样是错误的 连接SVN1svn checkout svn://你的服务器地址/`game`]]></content>
+      <tags>
+        <tag>centos</tag>
+        <tag>linux</tag>
+        <tag>svn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在后台以守护进程方式运行Node.js]]></title>
+    <url>%2F2017%2Fnohup-run-node%2F</url>
+    <content type="text"><![CDATA[1nohup node bin/www &gt; log 2&gt;&amp;1 &amp; 在使用SSH链接工具连接时，运行上述命令后执行 exit]]></content>
+      <tags>
+        <tag>node</tag>
+        <tag>SSH</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[更换npm源为国内淘宝源]]></title>
+    <url>%2F2017%2Fnpm-to-cnpm%2F</url>
+    <content type="text"><![CDATA[1npm install -g cnpm --registry=https://registry.npm.taobao.org]]></content>
+      <tags>
+        <tag>node</tag>
+        <tag>js</tag>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用nginx代理Node服务]]></title>
+    <url>%2F2017%2Fnginx-proxy-nodejs%2F</url>
+    <content type="text"><![CDATA[一台服务器既想要运行Nginx,又同时要运行Node.js？使用Nginx的反向代理轻松解决。 如何使用nginx代理Node服务在nginx的站点配置目录（ /etc/nginx/conf.d/ ）中新建一个虚拟主机 ( xxx.conf ), 粘贴下方代码 1234567891011121314151617181920upstream nodejs &#123; server 127.0.0.1:3000; # Node.js监听的地址及端口号 keepalive 64;&#125;server &#123; listen 80; # Nginx监听端口 server_name freelion.me; # 绑定的域名 access_log /var/log/nginx/test.log; # 日志文件 location / &#123; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Nginx-Proxy true; proxy_set_header Connection &quot;&quot;; proxy_pass http://nodejs; &#125;&#125;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[教你在Centos6中如何安装最新的PHP7]]></title>
+    <url>%2F2017%2Fcentos-install-php7%2F</url>
+    <content type="text"><![CDATA[Centos6中使用yum进行安装PHP，往往是较低的版本，这篇文字教你如何替换旧的PHP为PHP7 更新软件源wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpmwget http://rpms.remirepo.net/enterprise/remi-release-6.rpmrpm -Uvh remi-release-6.rpm epel-release-latest-6.noarch.rpm 安装yum install php70-php php70-php-pear php70-php-bcmath php70-php-pecl-jsond-devel php70-php-mysqlnd php70-php-gd php70-php-common php70-php-fpm php70-php-intl php70-php-cli php70-php php70-php-xml php70-php-opcache php70-php-pecl-apcu php70-php-pecl-jsond php70-php-pdo php70-php-gmp php70-php-process php70-php-pecl-imagick php70-php-devel php70-php-mbstring php70-php-mcrypt 为php和php-fpm制作符号链接cp /usr/bin/php{,.bak}ln -s /usr/bin/php70 /usr/bin/phpcp /usr/sbin/php-fpm{,.bak}ln -s /opt/remi/php70/root/usr/sbin/php-fpm /usr/sbin/php-fpm 检查PHP和php-fpm版本并启动php-fpmphp -vphp-fpm -vservice php-fpm restart]]></content>
+      <tags>
+        <tag>centos</tag>
+        <tag>php</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[附件上传超大文件，后端接受不到原因及解决办法集锦]]></title>
+    <url>%2F2016%2Fphp-upload-file%2F</url>
+    <content type="text"><![CDATA[前段时间做了一个类似附件上传的功能，前端请求正常，可后端[php]就是接受不到大文件（大于20M），于是就排查问题，折腾了两小时，无果，后来在网上搜到这篇文字。原文链接忘记保存了，在这里先感谢作者！ 下面分别是各种原因以及解决办法：第1种情况：upload_tmp_dir文件上传时存放文件的临时目录必须是开启的并且是 PHP 进程所有者用户可写的目录。如果未指定则 PHP 使用系统默认值。php.ini文件中upload_tmp_dir用来说明PHP上传的文件放置的临时目录，要想上传文件，得保证服务器没有关闭临时文件并对该文件夹有写入的权限。 第2种情况：max_execution_timemax_execution_time 的值必须足够大。变量 max_execution_time 设置了在强制终止脚本前PHP等待脚本执行完毕的时间，此时间以秒计算。当脚本进入了一个无限循环状态时此变量非常有用。然而，当存在一个需要很长时间完成的合法活动时（例如上传大型文件），这项功能也会导致操作失败。在这样的情况下必须考虑将此变量值增大，以避免PHP在脚本正在执行某些重要过程的时候将脚本关闭，例如设置为 90 秒。max_execution_time = 90 注意在php函数中还有个set_time_limit 函数，和以上这个设置的作用是相同的，这两者的区别就是 以上是在 php.ini 文件中设置的，而set_time_limit 是写在php文件中的。所以也可以通过在页面中用 set_time_limit 设置程序的最长执行时间，比如无限制即：set_time_limit(0); 第3种情况：file_uploads = On默认值为on，意思是允许通过 HTTP 进行文件上传，此选项不能设置为OFF。 第4种情况：upload_max_filesize = 2M设定文件上传的大小的最大值，php.ini配置文件中的默认文件上传大小为2M，php初学者容易犯的一个错误是在编写文件上传功能时通过设置上传文件最大大小的表单区域，即允许上传文件的最大值，max_file_size（隐藏值域）的值来规定上传文件的大小，其实一般别人可以绕过这个值，所以安全起见，最好是在 php.ini 配置文件中配置 upload_max_filesize 选项，设定文件上传的大小。默认 upload_max_filesize = 2M，即文件上传的大小为2M，如果你想上传超过8M的文件，比如20M，你必须设定 upload_max_filesize = 20M。 第5种情况：post_max_size这个值也必须足够大。这个变量也是一个同表单提交相关的变量，它限制的是客户端通过POST方法进行一次表单提交时PHP程序所能够接收的最大数据量。一般情况下，将此值的值设置的比 upload_max_filesize 略大即可，比如要上传20MB的文件，此值可以设置为 21MB。 第6种情况：max_input_time此变量可以以秒为单位对通过POST、GET以及PUT方式接收数据时间进行限制。如果应用程序所运行环境处在网络比较慢的情况下，则需要增加此值以增大接收数据所需要的时间，比如将此值设置为 90秒, max_input_time = 90。 第7种情况：memory_limit这个值也必须足够大，为了避免正在运行的脚本大量使用系统可用内存，PHP允许定义内存使用限额。通过memory_limit变量来指定单个脚本程序可以使用的最大内存容量。变量memory_limit的值应当适当大于post_max_size的值。 第8种情况：client_max_body_size另外如果你的主机是 nginx 操作系统的话，如果以上操作都不行的话，记得在nginx 的配置文件里面加上 client_max_body_size 20m; 这样一句，即表示最大允许上传20MB，具体根据自己的情况来。我的nginx 配置文件的位置在 /usr/local/nginx/conf/nginx.conf。]]></content>
+      <tags>
+        <tag>php</tag>
+        <tag>附件上传</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[阅读技术文档，也是一种能力]]></title>
+    <url>%2F2016%2Fread-document%2F</url>
+    <content type="text"><![CDATA[培养阅读文档的能力，对于程序猿的提升，很重要。 一个优秀的程序员，必备的一个素养，就是能够高效率的阅读技术类文档( 下面简称文档 )，快速的从各种文档中，寻找到自己需要的内容并投入使用到当前工作中 以我为例，对比了一下2015年前后对于技术的认识，惊奇的发现，就是在一次认认真真读技术文档，这就像是武林中人常说的： 打通了任督二脉，气聚丹田，发现气海涌动，达到天人合一的境界 说的可能夸张了些，不过高效率的阅读技术文档，确确实实的能在一定程度上提升在技术领域的视野、修养。 作为程序员，英语阅读能力是最基本的要求，相对口语和写作来说也是最容易达到的，因为计算机类图书的那些常用单词就那么多，多读几本英语类技术图书，想不认识都难。 如果程序员缺乏英语阅读能力，这将是你非常大的一块短板，如果意识到了，尽早补上。]]></content>
+      <tags>
+        <tag>文档</tag>
+      </tags>
+  </entry>
 </search>
