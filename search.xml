@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Javascript-Date-in-safari-bug]]></title>
     <url>%2F2017%2FJavascript-Date-in-safari-bug%2F</url>
-    <content type="text"><![CDATA[这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 new Date(&quot;2017-10-01 00:00:00&quot;) 在chrome中返回正确的日期对象：Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：Date {Sun Oct 01 2017 00:00:00 GMT+0800 (CST)} 在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：Invalid Date 这个Invalid Date就是比较尴尬的情况了，服务器返回的&#39;2017-10-01 00:00:00&#39;转换成JS Date对象之后就悲剧了，所以在此记录一下，与君共勉！！]]></content>
+    <content type="text"><![CDATA[这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 1new Date("2017-10-01 00:00:00") 在chrome中返回正确的日期对象：1Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：1Date &#123;Sun Oct 01 2017 00:00:00 GMT+0800 (CST)&#125; 在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：1Invalid Date 这个Invalid Date就是比较尴尬的情况了，服务器返回的&#39;2017-10-01 00:00:00&#39;转换成JS Date对象之后就悲剧了，所以在此记录一下，与君共勉！！]]></content>
       <tags>
         <tag>JS</tag>
         <tag>Date</tag>

@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 new Date(&amp;quot;2017-10-01 00:00:00&amp;quot;) 在chrome中返回正确的日期对象：Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：Date {Sun Oct 01 2017 00:00:0">
+<meta name="description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 1new Date(&quot;2017-10-01 00:00:00&quot;)">
 <meta name="keywords" content="JS,Date,兼容性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript-Date-in-safari-bug">
 <meta property="og:url" content="http://www.freelion.me/2017/Javascript-Date-in-safari-bug/index.html">
 <meta property="og:site_name" content="墨凡说">
-<meta property="og:description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 new Date(&amp;quot;2017-10-01 00:00:00&amp;quot;) 在chrome中返回正确的日期对象：Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：Date {Sun Oct 01 2017 00:00:0">
+<meta property="og:description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 1new Date(&quot;2017-10-01 00:00:00&quot;)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-21T14:43:51.000Z">
+<meta property="og:updated_time" content="2017-10-21T14:48:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript-Date-in-safari-bug">
-<meta name="twitter:description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 new Date(&amp;quot;2017-10-01 00:00:00&amp;quot;) 在chrome中返回正确的日期对象：Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：Date {Sun Oct 01 2017 00:00:0">
+<meta name="twitter:description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 1new Date(&quot;2017-10-01 00:00:00&quot;)">
 
 
 
@@ -361,10 +361,11 @@
 
       
         <p>这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见</p>
-<p><code>new Date(&quot;2017-10-01 00:00:00&quot;)</code></p>
-<h3 id="在chrome中返回正确的日期对象："><a href="#在chrome中返回正确的日期对象：" class="headerlink" title="在chrome中返回正确的日期对象："></a>在chrome中返回正确的日期对象：</h3><p><code>Sun Oct 01 2017 00:00:00 GMT+0800 (CST)</code></p>
-<h3 id="在高版本Firefox中返回正确的日期对象："><a href="#在高版本Firefox中返回正确的日期对象：" class="headerlink" title="在高版本Firefox中返回正确的日期对象："></a>在高版本Firefox中返回正确的日期对象：</h3><p><code>Date {Sun Oct 01 2017 00:00:00 GMT+0800 (CST)}</code></p>
-<h3 id="在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是："><a href="#在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：" class="headerlink" title="在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是："></a>在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：</h3><p><code>Invalid Date</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2017-10-01 00:00:00"</span>)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="在chrome中返回正确的日期对象："><a href="#在chrome中返回正确的日期对象：" class="headerlink" title="在chrome中返回正确的日期对象："></a>在chrome中返回正确的日期对象：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Sun Oct <span class="number">01</span> <span class="number">2017</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> GMT+<span class="number">0800</span> (CST)</div></pre></td></tr></table></figure>
+<h3 id="在高版本Firefox中返回正确的日期对象："><a href="#在高版本Firefox中返回正确的日期对象：" class="headerlink" title="在高版本Firefox中返回正确的日期对象："></a>在高版本Firefox中返回正确的日期对象：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Date</span> &#123;Sun Oct <span class="number">01</span> <span class="number">2017</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> GMT+<span class="number">0800</span> (CST)&#125;</div></pre></td></tr></table></figure>
+<h3 id="在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是："><a href="#在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：" class="headerlink" title="在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是："></a>在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Invalid <span class="built_in">Date</span></div></pre></td></tr></table></figure>
 <p>这个<code>Invalid Date</code>就是比较尴尬的情况了，服务器返回的<code>&#39;2017-10-01 00:00:00&#39;</code>转换成JS Date对象之后就悲剧了，所以在此记录一下，与君共勉！！</p>
 
       
