@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTML,Angular," />
+  <meta name="keywords" content="JS,Date,兼容性," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="今天尝试用AngularJs做前端处理 JSON 数据，其中碰到 AngularJS 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 data-ng-bind的话是被转义过的，使用 data-ng-bind-html则可以取消转义。">
-<meta name="keywords" content="HTML,Angular">
+<meta name="description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 new Date(&amp;quot;2017-10-01 00:00:00&amp;quot;) 在chrome中返回正确的日期对象：Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：Date {Sun Oct 01 2017 00:00:0">
+<meta name="keywords" content="JS,Date,兼容性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Angular中输出HTML片段">
-<meta property="og:url" content="http://www.freelion.me/2017/angular-bind-html/index.html">
+<meta property="og:title" content="Javascript-Date-in-safari-bug">
+<meta property="og:url" content="http://www.freelion.me/2017/Javascript-Date-in-safari-bug/index.html">
 <meta property="og:site_name" content="墨凡说">
-<meta property="og:description" content="今天尝试用AngularJs做前端处理 JSON 数据，其中碰到 AngularJS 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 data-ng-bind的话是被转义过的，使用 data-ng-bind-html则可以取消转义。">
+<meta property="og:description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 new Date(&amp;quot;2017-10-01 00:00:00&amp;quot;) 在chrome中返回正确的日期对象：Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：Date {Sun Oct 01 2017 00:00:0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-16T03:39:16.000Z">
+<meta property="og:updated_time" content="2017-10-21T14:43:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Angular中输出HTML片段">
-<meta name="twitter:description" content="今天尝试用AngularJs做前端处理 JSON 数据，其中碰到 AngularJS 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 data-ng-bind的话是被转义过的，使用 data-ng-bind-html则可以取消转义。">
+<meta name="twitter:title" content="Javascript-Date-in-safari-bug">
+<meta name="twitter:description" content="这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 new Date(&amp;quot;2017-10-01 00:00:00&amp;quot;) 在chrome中返回正确的日期对象：Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：Date {Sun Oct 01 2017 00:00:0">
 
 
 
@@ -118,10 +118,10 @@
 
 
 
-  <link rel="canonical" href="http://www.freelion.me/2017/angular-bind-html/"/>
+  <link rel="canonical" href="http://www.freelion.me/2017/Javascript-Date-in-safari-bug/"/>
 
 
-  <title> 在Angular中输出HTML片段 | 墨凡说 </title>
+  <title> Javascript-Date-in-safari-bug | 墨凡说 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -304,7 +304,7 @@
             
             
               
-                在Angular中输出HTML片段
+                Javascript-Date-in-safari-bug
               
             
           </h1>
@@ -316,8 +316,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-16T11:25:48+08:00" content="2017-02-16">
-              2017-02-16
+            <time itemprop="dateCreated" datetime="2017-10-21T22:27:23+08:00" content="2017-10-21">
+              2017-10-21
             </time>
           </span>
 
@@ -327,8 +327,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/angular-bind-html/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/angular-bind-html/" itemprop="commentsCount"></span>
+                <a href="/2017/Javascript-Date-in-safari-bug/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/Javascript-Date-in-safari-bug/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -338,7 +338,7 @@
 
           
           
-             <span id="/2017/angular-bind-html/" class="leancloud_visitors" data-flag-title="在Angular中输出HTML片段">
+             <span id="/2017/Javascript-Date-in-safari-bug/" class="leancloud_visitors" data-flag-title="Javascript-Date-in-safari-bug">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -360,15 +360,12 @@
       
 
       
-        <p>今天尝试用<strong>AngularJs</strong>做前端处理 JSON 数据，其中碰到 <strong>AngularJS</strong> 获取的是一段 HTML 文本（渲染文章主体部分），如果直接使用 <strong>data-ng-bind</strong>的话是被转义过的，使用 <code>data-ng-bind-html</code>则可以取消转义。</p>
-<a id="more"></a>
-<p>直接使用 data-ng-bind-html 的结果是:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: [$sce:unsafe] Attempting to use an unsafe value in a safe context.</div></pre></td></tr></table></figure>
-<p>HTML 片段需要先使用 <code>$sce.trustAsHtml(html_in_string)</code> 将标记为信任，然后才可以使用 <code>data-ng-bind-html=&quot;html_in_string&quot;</code> 取消转义，进而输出HTML片段，达到如期想要的结果。</p>
-<p>正确写法如下：</p>
-<p>JS部分：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">data.content = $sce.trustAsHtml(<span class="string">'这里填写你需要取消转义的html结构'</span>);</div><div class="line">$scope.data = data;</div></pre></td></tr></table></figure>
-<p>HTML部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span> <span class="attr">data-ng-bind-html</span>=<span class="string">"data.content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+        <p>这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见</p>
+<p><code>new Date(&quot;2017-10-01 00:00:00&quot;)</code></p>
+<h3 id="在chrome中返回正确的日期对象："><a href="#在chrome中返回正确的日期对象：" class="headerlink" title="在chrome中返回正确的日期对象："></a>在chrome中返回正确的日期对象：</h3><p><code>Sun Oct 01 2017 00:00:00 GMT+0800 (CST)</code></p>
+<h3 id="在高版本Firefox中返回正确的日期对象："><a href="#在高版本Firefox中返回正确的日期对象：" class="headerlink" title="在高版本Firefox中返回正确的日期对象："></a>在高版本Firefox中返回正确的日期对象：</h3><p><code>Date {Sun Oct 01 2017 00:00:00 GMT+0800 (CST)}</code></p>
+<h3 id="在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是："><a href="#在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：" class="headerlink" title="在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是："></a>在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：</h3><p><code>Invalid Date</code></p>
+<p>这个<code>Invalid Date</code>就是比较尴尬的情况了，服务器返回的<code>&#39;2017-10-01 00:00:00&#39;</code>转换成JS Date对象之后就悲剧了，所以在此记录一下，与君共勉！！</p>
 
       
     </div>
@@ -412,9 +409,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTML/" rel="tag">#HTML</a>
+            <a href="/tags/JS/" rel="tag">#JS</a>
           
-            <a href="/tags/Angular/" rel="tag">#Angular</a>
+            <a href="/tags/Date/" rel="tag">#Date</a>
+          
+            <a href="/tags/兼容性/" rel="tag">#兼容性</a>
           
         </div>
       
@@ -423,17 +422,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/chrome-form-autocomplete/" rel="next" title="chrome浏览器中取消自动填充密码">
-                <i class="fa fa-chevron-left"></i> chrome浏览器中取消自动填充密码
+              <a href="/2017/javascript-prototype-constructor/" rel="next" title="javascript-prototype-constructor">
+                <i class="fa fa-chevron-left"></i> javascript-prototype-constructor
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/iphone-ipad-button-default-style/" rel="prev" title="iphone/ipad中button按钮的默认样式修改">
-                iphone/ipad中button按钮的默认样式修改 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -448,10 +443,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/angular-bind-html/"
-     data-title="在Angular中输出HTML片段"
+        <div class="ds-share flat" data-thread-key="2017/Javascript-Date-in-safari-bug/"
+     data-title="Javascript-Date-in-safari-bug"
      data-content=""
-     data-url="http://www.freelion.me/2017/angular-bind-html/">
+     data-url="http://www.freelion.me/2017/Javascript-Date-in-safari-bug/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -478,8 +473,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/angular-bind-html/"
-           data-title="在Angular中输出HTML片段" data-url="http://www.freelion.me/2017/angular-bind-html/">
+      <div class="ds-thread" data-thread-key="2017/Javascript-Date-in-safari-bug/"
+           data-title="Javascript-Date-in-safari-bug" data-url="http://www.freelion.me/2017/Javascript-Date-in-safari-bug/">
       </div>
     
   </div>
@@ -608,7 +603,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在chrome中返回正确的日期对象："><span class="nav-number">1.</span> <span class="nav-text">在chrome中返回正确的日期对象：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在高版本Firefox中返回正确的日期对象："><span class="nav-number">2.</span> <span class="nav-text">在高版本Firefox中返回正确的日期对象：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是："><span class="nav-number">3.</span> <span class="nav-text">在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：</span></a></li></ol></div>
             
           </div>
         </section>
