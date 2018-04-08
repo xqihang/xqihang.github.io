@@ -8,8 +8,22 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个在编程代码与诗意人生中穿行的95后、游戏黑洞、深夜情感治愈系主播。诗和远方就在笔端，用深情研磨，每个人都是诗人。就让我们在这片江湖重逢，邂逅这样的文字、聆听让彼此内心共振的声音！</description>
-    <pubDate>Sat, 21 Oct 2017 14:48:00 GMT</pubDate>
+    <pubDate>Sun, 08 Apr 2018 06:46:40 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>微信小程序填坑指南</title>
+      <link>http://www.freelion.me/2018/weixin-miniapp/</link>
+      <guid>http://www.freelion.me/2018/weixin-miniapp/</guid>
+      <pubDate>Sun, 08 Apr 2018 06:22:45 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;记录微信小程序[Android/IOS]差异及各种填坑攻略&lt;br&gt;
+      
+      </description>
+      
+      <comments>http://www.freelion.me/2018/weixin-miniapp/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Javascript-Date-in-safari-bug</title>

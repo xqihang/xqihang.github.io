@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[微信小程序填坑指南]]></title>
+    <url>%2F2018%2Fweixin-miniapp%2F</url>
+    <content type="text"><![CDATA[记录微信小程序[Android/IOS]差异及各种填坑攻略 模板消息之formId在微信小程序里可以通过以下代码获取到模板消息使用的formid123&lt;form report-submit="true" bindsubmit="bindsubmit"&gt; &lt;button form-type="submit"&gt;获取FormId&lt;/button&gt;&lt;/form&gt; 刚开始怀疑自己代码有问题，而追查之后才发现是系统的原因： 12Android: 1523167620498iPhone: 7f9976d0f482e688de6f855e7e110fa7 如上所示，安卓与苹果获取到的formid格式并不一样，安卓采取的是时间戳形式，而iPhone则是采取的32位随机字符 后续待完善]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Javascript-Date-in-safari-bug]]></title>
     <url>%2F2017%2FJavascript-Date-in-safari-bug%2F</url>
     <content type="text"><![CDATA[这是一个隐藏比较深的Javascript的小bug, 时间对象都不陌生，类似于这样的写法也很常见 1new Date("2017-10-01 00:00:00") 在chrome中返回正确的日期对象：1Sun Oct 01 2017 00:00:00 GMT+0800 (CST) 在高版本Firefox中返回正确的日期对象：1Date &#123;Sun Oct 01 2017 00:00:00 GMT+0800 (CST)&#125; 在IE、Firefox低版本、Safari、手机低版本浏览器中返回的是：1Invalid Date 这个Invalid Date就是比较尴尬的情况了，服务器返回的&#39;2017-10-01 00:00:00&#39;转换成JS Date对象之后就悲剧了，所以在此记录一下，与君共勉！！]]></content>
